@@ -184,11 +184,71 @@ void readFile(ifstream& iFile)
 }
 
 
+/**
+.Swaps two chosen elements from a wordVector
+@param wordVector: reference to a vector of strings
+@param pos1: integer containing a index of a position in the vector
+@param pos2: integer containing a index of a position in the vector
+*/
 
+
+void vectorSwap(vector<string>& wordVector, int pos1, int pos2)
+{
+	string temp = wordVector.at(pos1);
+
+	wordVector.at(pos1) = wordVector.at(pos2);
+	wordVector.at(pos2) = temp;
+}
+
+/**
+.Uses bubble sort to sort and vector of strings, alphabetically. It is entended for strings with only upper case letters.
+@param wordVector: reference to a vector
+*/
+
+
+void sortVector(vector<string>& wordVector)
+{
+	//Initialize variables
+	unsigned int vectorSize = wordVector.size();
+	bool didSwap;
+
+	do
+	{
+		didSwap = false;
+		//if a string is "bigger" than the following one, swap them and change the bool value
+		for (unsigned int i = 1; i < vectorSize; i++)
+		{
+			if (wordVector.at(i - 1) > wordVector.at(i))
+			{
+				vectorSwap(wordVector, i, i - 1);
+				didSwap = true;
+			}
+		}
+	} while (didSwap); //stops when no swaps occured
+
+}
+
+/**
+.Removes duplicate words from a sorted vector
+@param wordVector: sorted array of upper case strinfs
+*/
+
+void removeDuplicates(vector<string>& wordVector)
+{
+	for (unsigned int j = 0; j < (wordVector.size() - 1); j++)
+	{
+		if (wordVector.at(j) == wordVector.at(j + 1))
+		{
+			wordVector.erase(wordVector.begin() + j);
+			j--;
+		}
+
+	}
+}
 
 int main()
 {
-	/*
+	
 	ifstream inputFile;
 	ofstream outputFile;
 
@@ -225,7 +285,7 @@ int main()
 	cout << "beginning with letter ..." << endl;
 
 	readFile(inputFile);
-	*/
+	
 
 
 	return 0;
