@@ -1,3 +1,52 @@
+The Project Gutenberg EBook of Webster's Unabridged Dictionary, by Various
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+
+Title: Webster's Unabridged Dictionary
+
+Author: Various
+
+Release Date: August 22, 2009 [EBook #29765]
+[Last updated: May 18, 2014]
+
+Language: English
+
+Character set encoding: ISO-8859-1
+
+*** START OF THIS PROJECT GUTENBERG EBOOK WEBSTER'S UNABRIDGED DICTIONARY ***
+
+
+
+
+Produced by Graham Lawrence
+
+
+
+
+A
+A (named a in the English, and most commonly ä in other languages).
+
+Defn: The first letter of the English and of many other alphabets.
+The capital A of the alphabets of Middle and Western Europe, as also
+the small letter (a), besides the forms in Italic, black letter,
+etc., are all descended from the old Latin A, which was borrowed from
+the Greek Alpha, of the same form; and this was made from the first
+letter (Aleph, and itself from the Egyptian origin. The Aleph was a
+consonant letter, with a guttural breath sound that was not an
+element of Greek articulation; and the Greeks took it to represent
+their vowel Alpha with the ä sound, the Phoenician alphabet having no
+vowel symbols. This letter, in English, is used for several different
+vowel sounds. See Guide to pronunciation, §§ 43-74. The regular long
+a, as in fate, etc., is a comparatively modern sound, and has taken
+the place of what, till about the early part of the 17th century, was
+a sound of the quality of ä (as in far).
+
+2. (Mus.)
+
 Defn: The name of the sixth tone in the model major scale (that in
 C), or the first tone of the minor scale, which is named after it the
 scale in A minor. The second string of the violin is tuned to the A
@@ -182,287 +231,6 @@ Ab"a*cist, n. Etym: [LL abacista, fr. abacus.]
 
 Defn: One who uses an abacus in casting accounts; a calculator.
 
-ABACK
-A*back", adv. Etym: [Pref. a- + back; AS. on bæc at, on, or toward
-the back. See Back.]
-
-1. Toward the back or rear; backward. "Therewith aback she started."
-Chaucer.
-
-2. Behind; in the rear. Knolles.
-
-3. (Naut.)
-
-Defn: Backward against the mast;-said of the sails when pressed by
-the wind. Totten. To be taken aback. (a) To be driven backward
-against the mast; -- said of the sails, also of the ship when the
-sails are thus driven. (b) To be suddenly checked, baffled, or
-discomfited. Dickens.
-
-ABACK
-Ab"ack, n.
-
-Defn: An abacus. [Obs.] B. Jonson.
-
-ABACTINAL
-Ab*ac"ti*nal, a. Etym: [L. ab + E. actinal.] (Zoöl.)
-
-Defn: Pertaining to the surface or end opposite to the mouth in a
-radiate animal; -- opposed to actinal. "The aboral or abactinal
-area." L. Agassiz.
-
-ABACTION
-Ab*ac"tion, n.
-
-Defn: Stealing cattle on a large scale. [Obs.]
-
-ABACTOR
-Ab*ac"tor, n. Etym: [L., fr. abigere to drive away; ab+agere to
-drive.] (Law)
-
-Defn: One who steals and drives away cattle or beasts by herds or
-droves. [Obs.]
-
-ABACULUS
-A*bac"u*lus, n.; pl. Abaculi. Etym: [L., dim. of abacus.] (Arch.)
-
-Defn: A small tile of glass, marble, or other substance, of various
-colors, used in making ornamental patterns in mosaic pavements.
-Fairholt.
-
-ABACUS
-Ab"a*cus, n. E. pl. Abacuses ; L. pl. Abaci. Etym: [L. abacus, abax,
-Gr.
-
-1. A table or tray strewn with sand, anciently used for drawing,
-calculating, etc. [Obs.]
-
-2. A calculating table or frame; an instrument for performing
-arithmetical calculations by balls sliding on wires, or counters in
-grooves, the lowest line representing units, the second line, tens,
-etc. It is still employed in China.
-
-3. (Arch.)
-(a) The uppermost member or division of the capital of a column,
-immediately under the architrave. See Column.
-(b) A tablet, panel, or compartment in ornamented or mosaic work.
-
-4. A board, tray, or table, divided into perforated compartments, for
-holding cups, bottles, or the like; a kind of cupboard, buffet, or
-sideboard. Abacus harmonicus (Mus.), an ancient diagram showing the
-structure and disposition of the keys of an instrument. Crabb.
-
-ABADA
-Ab"a*da, n. Etym: [Pg., the female rhinoceros.]
-
-Defn: The rhinoceros. [Obs.] Purchas.
-
-ABADDON
-A*bad"don, n. Etym: [Heb. abaddon destruction, abyss, fr. abad to be
-lost, to perish.]
-
-1. The destroyer, or angel of the bottomless pit; -- the same as
-Apollyon and Asmodeus.
-
-2. Hell; the bottomless pit. [Poetic]
-In all her gates, Abaddon rues Thy bold attempt. Milton.
-
-ABAFT
-A*baft", prep. Etym: [Pref. a-on + OE. baft, baften, biaften, AS.
-beæftan; be by + æftan behind. See After, Aft, By.] (Naut.)
-
-Defn: Behind; toward the stern from; as, abaft the wheelhouse. Abaft
-the beam. See under Beam.
-
-ABAFT
-A*baft", adv. (Naut.)
-
-Defn: Toward the stern; aft; as, to go abaft.
-
-ABAISANCE
-A*bai"sance, n. Etym: [For obeisance; confused with F. abaisser, E.
-abase]
-
-Defn: Obeisance. [Obs.] Jonson.
-
-ABAISER
-A*bai"ser, n.
-
-Defn: Ivory black or animal charcoal. Weale.
-
-ABAIST
-A*baist", p.p.
-
-Defn: Abashed; confounded; discomfited. [Obs.] Chaucer.
-
-ABALIENATE
-Ab*al"ien*ate, v.t. Etym: [L. abalienatus, p.p. of abalienare; ab +
-alienus foreign, alien. See Alien.]
-
-1. (Civil Law)
-
-Defn: To transfer the title of from one to another; to alienate.
-
-2. To estrange; to withdraw. [Obs.]
-
-3. To cause alienation of (mind). Sandys.
-
-ABALIENATION
-Ab*al`ien*a"tion, n. Etym: [L. abalienatio: cf. F. abalianation.]
-
-Defn: The act of abalienating; alienation; estrangement. [Obs.]
-
-ABALONE
-Ab`a*lo"ne, n. (Zoöl.)
-
-Defn: A univalve mollusk of the genus Haliotis. The shell is lined
-with mother-of-pearl, and used for ornamental purposes; the sea-ear.
-Several large species are found on the coast of California, clinging
-closely to the rocks.
-
-ABAND
-A*band", v.t. Etym: [Contracted from abandon.]
-
-1. To abandon. [Obs.]
-Enforced the kingdom to aband. Spenser.
-
-2. To banish; to expel. [Obs.] Mir. for Mag.
-
-ABANDON
-A*ban"don, v.t. [imp. & p.p. Abandoned; p.pr. & vb.n. Abandoning.]
-Etym: [OF. abandoner, F.abandonner; a (L. ad)+bandon permission,
-authority, LL. bandum, bannum, public proclamation, interdiction,
-bannire to proclaim, summon: of Germanic origin; cf. Goth. bandwjan
-to show by signs, to designate OHG. banproclamation. The word meant
-to proclaim, put under a ban, put under control; hence, as in OE., to
-compel, subject, or to leave in the control of another, and hence, to
-give up. See Ban.]
-
-1. To cast or drive out; to banish; to expel; to reject. [Obs.]
-That he might . . . abandon them from him. Udall.
-Being all this time abandoned from your bed. Shak.
-
-2. To give up absolutely; to forsake entirely ; to renounce utterly;
-to relinquish all connection with or concern on; to desert, as a
-person to whom one owes allegiance or fidelity; to quit; to
-surrender.
-Hope was overthrown, yet could not be abandoned. I. Taylor.
-
-3. Reflexively : To give (one's self) up without attempt at self-
-control ; to yield (one's self) unrestrainedly ; -- often in a bad
-sense.
-He abandoned himself . . . to his favorite vice. Macaulay.
-
-4. (Mar. Law)
-
-Defn: To relinquish all claim to; -- used when an insured person
-gives up to underwriters all claim to the property covered by a
-policy, which may remain after loss or damage by a peril insured
-against.
-
-Syn.
- -- To give up; yield; forego; cede; surrender; resign; abdicate;
-quit; relinquish; renounce; desert; forsake; leave; retire; withdraw
-from.
- -- To Abandon, Desert, Forsake. These words agree in representing a
-person as giving up or leaving some object, but differ as to the mode
-of doing it. The distinctive sense of abandon is that of giving up a
-thing absolutely and finally; as, to abandon one's friends, places,
-opinions, good or evil habits, a hopeless enterprise, a shipwrecked
-vessel. Abandon is more widely applicable than forsake or desert. The
-Latin original of desert appears to have been originally applied to
-the case of deserters from military service. Hence, the verb, when
-used of persons in the active voice, has usually or always a bad
-sense, implying some breach of fidelity, honor, etc., the leaving of
-something which the person should rightfully stand by and support;
-as, to desert one's colors, to desert one's post, to desert one's
-principles or duty. When used in the passive, the sense is not
-necessarily bad; as, the fields were deserted, a deserted village,
-deserted halls. Forsake implies the breaking off of previous habit,
-association, personal connection, or that the thing left had been
-familiar or frequented; as, to forsake old friends, to forsake the
-paths of rectitude, the blood forsook his cheeks. It may be used
-either in a good or in a bad sense.
-
-ABANDON
-A*ban"don, n. Etym: [F. abandon. fr. abandonner. See Abandon, v.]
-
-Defn: Abandonment; relinquishment. [Obs.]
-
-ABANDON
-A`ban`don", n. Etym: [F. See Abandon.]
-
-Defn: A complete giving up to natural impulses; freedom from
-artificial constraint; careless freedom or ease.
-
-ABANDONED
-A*ban"doned, a.
-
-1. Forsaken, deserted. "Your abandoned streams." Thomson.
-
-2. Self-abandoned, or given up to vice; extremely wicked, or sinning
-without restraint; irreclaimably wicked ; as, an abandoned villain.
-
-Syn.
- -- Profligate; dissolute; corrupt; vicious; depraved; reprobate;
-wicked; unprincipled; graceless; vile.
- -- Abandoned, Profligate, Reprobate. These adjectives agree in
-expressing the idea of great personal depravity. Profligate has
-reference to open and shameless immoralities, either in private life
-or political conduct; as, a profligate court, a profligate ministry.
-Abandoned is stronger, and has reference to the searing of conscience
-and hardening of heart produced by a man's giving himself wholly up
-to iniquity; as, a man of abandoned character. Reprobate describes
-the condition of one who has become insensible to reproof, and who is
-morally abandoned and lost beyond hope of recovery.
-God gave them over to a reprobate mind. Rom. i. 28.
-
-ABANDONEDLY
-A*ban"doned*ly, adv.
-
-Defn: Unrestrainedly.
-
-ABANDONEE
-A*ban`don*ee", n. (Law)
-
-Defn: One to whom anything is legally abandoned.
-
-ABANDONER
-A*ban"don*er, n.
-
-Defn: One who abandons. Beau. & Fl.
-
-ABANDONMENT
-A*ban"don*ment, n. Etym: [Cf. F. abandonnement.]
-
-1. The act of abandoning, or the state of being abandoned; total
-desertion; relinquishment.
-The abandonment of the independence of Europe. Burke.
-
-2. (Mar. Law)
-
-Defn: The relinquishment by the insured to the underwriters of what
-may remain of the property insured after a loss or damage by a peril
-insured against.
-
-3. (Com. Law)
-
-Defn: (a) The relinquishment of a right, claim, or privilege, as to
-mill site, etc. (b) The voluntary leaving of a person to whom one is
-bound by a special relation, as a wife, husband, or child; desertion.
-
-4. Careless freedom or ease; abandon. [R.] Carlyle.
-
-ABANDUM
-A*ban"*dum, n. Etym: [LL. See Abandon.] (Law)
-
-Defn: Anything forfeited or confiscated.
-
-ABANET
-Ab"a*net, n.
-
-Defn: See Abnet.
-
 ABANGA
 A*ban"ga, n. Etym: [Name given by the negroes in the island of St.
 Thomas.]
@@ -475,32 +243,1262 @@ Ab`an*na"tion, Ab`an*nition, n. Etym: [LL. abannatio; ad + LL.
 bannire to banish.] (Old Law)
 
 Defn: Banishment. [Obs.] Bailey.
+	
+MINGLER
+Min"gler, n.
 
-ABARTICULATION
-Ab`ar*tic`u*la"tion, n. Etym: [L. ab + E. articulation : cf. F.
-abarticulation. See Article.] (Anat.)
+Defn: One who mingles.
 
-Defn: Articulation, usually that kind of articulation which admits of
-free motion in the joint; diarthrosis. Coxe.
+MINGLINGLY
+Min"gling*ly, adv.
 
-ABASE
-A*base", v.t. [imp.&p.p. Abased; p.pr. & vb. n. Abasing.] Etym: [F.
-abaisser, LL. abassare, abbassare ; ad + bassare, fr. bassus low. See
-Base, a.]
+Defn: In a mingling manner.
 
-1. To lower or depress; to throw or cast down; as, to abase the eye.
-[Archaic] Bacon.
-Saying so, he abased his lance. Shelton.
+MINIACEOUS; MINACEOUS
+Min`i*a"ceous, a.
 
-2. To cast down or reduce low or lower, as in rank, office, condition
-in life, or estimation of worthiness; to depress; to humble; to
-degrade.
-Whosoever exalteth himself shall be abased. Luke xiv. ll.
+Defn: Of the color of minium or red lead; miniate.
+
+MINIARD
+Min"iard, a.
+
+Defn: Migniard. [Obs.]
+
+MINIARDIZE
+Min"iard*ize, v. t.
+
+Defn: To render delicate or dainty. [Obs.] Howell.
+
+MINIATE
+Min"i*ate, v. t. [imp. & p. p. Miniated; p. pr. & vb. n. Miniating.]
+Etym: [L. miniatus, p. p. of miniare. See Minium.]
+
+Defn: To paint or tinge with red lead or vermilion; also, to decorate
+with letters, or the like, painted red, as the page of a manuscript.
+T. Wharton.
+
+MINIATE
+Min"i*ate, a.
+
+Defn: Of or pertaining to the color of red lead or vermilion; painted
+with vermilion.
+
+MINIATURE
+Min"i*a*ture, n. Etym: [It. miniatura, fr. L. miniare. See Miniate,
+v.,Minium.]
+
+1. Originally, a painting in colors such as those in mediæval
+manuscripts; in modern times, any very small painting, especially a
+portrait.
+
+2. Greatly diminished size or form; reduced scale.
+
+3. Lettering in red; rubric distinction. [Obs.]
+
+4. A particular feature or trait. [Obs.] Massinger.
+
+MINIATURE
+Min"i*a*ture, a.
+
+Defn: Being on a small; much reduced from the reality; as, a
+miniature copy.
+
+MINIATURE
+Min"i*a*ture, v. t.
+
+Defn: To represent or depict in a small compass, or on a small scale.
+
+MINIATURIST
+Min"i*a*tur`ist, n.
+
+Defn: A painter of miniatures.
+
+MINIBUS
+Min"i*bus, n. Etym: [L. minor less + -bus, as in omnibus.]
+
+Defn: A kind of light passenger vehicle, carrying four persons.
+
+MINIE BALL
+Min"ie ball`. Etym: [From the inventor, Captain Minié, of France.]
+
+Defn: A conical rifle bullet, with a cavity in its base plugged with
+a piece of iron, which, by the explosion of the charge, is driven
+farther in, expanding the sides to fit closely the grooves of the
+barrel.
+
+MINIE RIFLE
+Min"ie ri"fle.
+
+SIBILATION
+Sib`i*la"tion, n. Etym: [L. sibilatio.]
+
+Defn: Utterance with a hissing sound; also, the sound itself; a hiss.
+He, with a long, low sibilation, stared. Tennyson.
+
+SIBILATORY
+Sib"i*la*to*ry, a.
+
+Defn: Hissing; sibilant.
+
+SIBILOUS
+Sib"i*lous, a. Etym: [L. sibilus.]
+
+Defn: Having a hissing sound; hissing; sibilant. [R.] Pennant.
+
+SIBYL
+Sib"yl, n. Etym: [L. sibylla, Gr.
+
+1. (Class. Antiq.)
+
+Defn: A woman supposed to be endowed with a spirit of prophecy.
+
+Note: The number of the sibyls is variously stated by different
+authors; but the opinion of Varro, that there were ten, is generally
+adopted. They dwelt in various parts of Persia, Greece, and Italy.
+
+2. A female fortune teller; a pythoness; a prophetess. "An old
+highland sibyl." Sir W. Scott.
+
+SIBYLIST
+Sib"yl*ist, n.
+
+Defn: One who believes in a sibyl or the sibylline prophecies.
+Cudworth.
+
+SIBYLLINE
+Sib"yl*line, a. Etym: [L. sibyllinus.]
+
+Defn: Pertaining to the sibyls; uttered, written, or composed by
+sibyls; like the productions of sibyls. Sibylline books. (a) (Rom.
+Antiq.) Books or documents of prophecies in verse concerning the fate
+of the Roman empire, said to have been purchased by Tarquin the Proud
+from a sibyl. (b) Certain Jewish and early Christian writings
+purporting to have been prophetic and of sibylline origin. They date
+from 100 b. c. to a. d. 500.
+
+SIC
+Sic, a.
+
+Defn: Such. [Scot.]
+
+SIC
+Sic, adv. Etym: [L.]
+
+Defn: Thus.
+
+Note: This word is sometimes inserted in a quotation [sic], to call
+attention to the fact that some remarkable or inaccurate expression,
+misspelling, or the like, is literally reproduced.
+
+SICAMORE
+Sic"a*more, n. (Bot.)
+
+Defn: See Sycamore.
+
+SICCA
+Sic"ca, n. Etym: [Ar. sikka.]
+
+Defn: A seal; a coining die; -- used adjectively to designate the
+silver currency of the Mogul emperors, or the Indian rupee of 192
+grains. Sicca rupee, an East Indian coin, valued nominally at about
+two shillings sterling, or fifty cents.
+
+SICCATE
+Sic"cate, v. t. Etym: [L. siccatus, p. p. of siccare to dry, fr.
+siecus dry.]
+
+Defn: To dry. [R.]
+
+SICCATION
+Sic*ca"tion, n. Etym: [L. siccatio.]
+
+Defn: The act or process of drying. [R.] Bailey.
+
+SICCATIVE
+Sic"ca*tive, a. Etym: [L. siccativus.]
+
+Defn: Drying; causing to dry.
+ -- n.
+
+Defn: That which promotes drying.
+
+SICCIFIC
+Sic*cif"ic, a.Etym: [L. siccificus; siccus dry + facere to make. See
+-fy.]
+
+Defn: Causing dryness.
+
+SICCITY
+Sic"ci*ty, n. Etym: [L. siccitas, fr. siccus dry.]
+
+Defn: Dryness; aridity; destitution of moisture. [Obs.]
+The siccity and dryness of its flesh. Sir T. Browne.
+
+SICE
+Sice, n. Etym: [F. six, fr. L. sex six. See Six.]
+
+Defn: The number six at dice.
+
+SICER
+Si"cer, n. Etym: [L. sicera. See Cider.]
+
+Defn: A strong drink; cider. [Obs.] Chaucer.
+
+SICH
+Sich, a.
+
+SHRILL-GORGED
+Shrill"-gorged`, a.
+
+Defn: Having a throat which produces a shrill note. [R.] Shak.
+
+SHRILLNESS
+Shrill"ness, n.
+
+Defn: The quality or state of being shrill.
+
+MAGENTA
+Ma*gen"ta, n. (Chem.)
+
+Defn: An aniline dye obtained as an amorphous substance having a
+green bronze surface color, which dissolves to a shade of red; also,
+the color; -- so called from Magenta, in Italy, in allusion to the
+battle fought there about the time the dye was discovered. Called
+also fuchsine, roseïne, etc.
+
+MAGGED
+Magged, a. (Naut.)
+
+Defn: Worn; fretted; as, a magged brace. Ham. Nav. Encyc.
+
+MAGGIORE
+Mag`gio"re, a. Etym: [It., from L. major, compar. of magnus great.
+See Major.] (Mus.)
+
+Defn: Greater, in respect to scales, intervals, etc., when used in
+opposition to minor; major. Moore (Encyc. of Music).
+
+MAGGOT
+Mag"got, n. Etym: [W. macai, pl. maceiod, magiod, a worn or grub; cf.
+magu to bread.]
+
+TALBOTYPE
+Tal"bo*type, n. (Photog.)
+
+Defn: Same as Calotype.
+
+TALC
+Talc, n. Etym: [F. talc; cf. Sp. & It. talco, LL. talcus; all fr. Ar.
+talq.] (Min.)
+
+Defn: A soft mineral of a soapy feel and a greenish, whitish, or
+grayish color, usually occurring in foliated masses. It is hydrous
+silicate of magnesia. Steatite, or soapstone, is a compact granular
+variety. Indurated talc, an impure, slaty talc, with a nearly compact
+texture, and greater hardness than common talc; -- called also talc
+slate.
+
+TALCOSE; TALCOUS
+Tal*cose", Talc"ous, a. Etym: [Cf. F. talqueux.] (Min.)
+
+Defn: Of or pertaining to talc; composed of, or resembling, talc.
+
+TALCUM
+Tal"cum, n. [NL.] (Min.)
+
+Defn: Same as Talc.
+
+TALE
+Tale, n.
+
+Defn: See Tael.
+
+TALE
+Tale, n. Etym: [AS. talu number, speech, narrative; akin to D. taal
+speech, language, G. zahl number, OHG. zala, Icel. tal, tala, number,
+speech, Sw. tal, Dan. tal number, tale speech, Goth. talzjan to
+instruct. Cf. Tell, v. t., Toll a tax, also Talk, v. i.]
+
+1. That which is told; an oral relation or recital; any rehearsal of
+what has occured; narrative; discourse; statement; history; story.
+"The tale of Troy divine." Milton. "In such manner rime is Dante's
+tale." Chaucer.
+We spend our years as a tale that is told. Ps. xc. 9.
+
+2. A number told or counted off; a reckoning by count; an
+enumeration; a count, in distinction from measure or weight; a number
+reckoned or stated.
+The ignorant, . . . who measure by tale, and not by weight. Hooker.
+And every shepherd tells his tale, Under the hawthornn in the dale.
+Milton.
+In packing, they keep a just tale of the number. Carew.
+
+3. (Law)
+
+Defn: A count or declaration. [Obs.] To tell tale of, to make account
+of. [Obs.]
+Therefore little tale hath he told Of any dream, so holy was his
+heart. Chaucer.
 
 Syn.
- -- To Abase, Debase, Degrade. These words agree in the idea of
-bringing down from a higher to a lower state. Abase has reference to
-a bringing down in condition or feelings; as to abase one's self
-before God. Debase has reference to the bringing down of a thing in
-purity, or making it base. It is, therefore, always used in a bad
-sense, as, to debase the coin of the kingdom, to debase the m
+ -- Anecdote; story; fable; incident; memoir; relation; account;
+legend; narrative.
+
+TALE
+Tale, v. i.
+
+Defn: To tell stories. [Obs.] Chaucer. Gower.
+
+TALEBEARER
+Tale"bear`er, n.
+
+Defn: One who officiously tells tales; one who impertinently or
+maliciously communicates intelligence, scandal, etc., and makes
+mischief.
+Spies and talebearers, encouraged by her father, did their best to
+inflame her resentment. Macaulay.
+
+TALEBEARING
+Tale"bear`ing, a.
+
+Defn: Telling tales officiously.
+
+TALEBEARING
+Tale"bear`ing, n.
+
+Defn: The act of informing officiously; communication of sectrts,
+scandal, etc., maliciously.
+
+TALED
+Ta"led, n. (Jewish Antiq.)
+
+Defn: A kind of quadrangular piece of cloth put on by the Jews when
+repeating prayers in the synagogues. Crabb.
+
+TALEFUL
+Tale"ful, a.
+
+Defn: Full of stories. [R.] Thomson.
+
+TALEGALLA
+Tal`e*gal"la, n. Etym: [NL.] (Zoöl.)
+
+Defn: A genus of Australian birds which includes the brush turkey.
+See Brush turkey.
+
+TALENT
+Tal"ent, n. Etym: [F., fr. L. talentum a talent (in sense 1), Gr.
+tolerare, tollere, to lift up, sustain, endure. See Thole, v. t.,
+Tolerate.]
+
+1. Among the ancient Greeks, a weight and a denomination of money
+equal to 60 minæ or 6,000 drachmæ. The Attic talent, as a weight, was
+about 57 lbs. avoirdupois; as a denomination of silver money, its
+value was £243 15s. sterling, or about $1,180.
+Rowing vessel whose burden does not exceed five hundred talents.
+Jowett (Thucid.).
+
+2. Among the Hebrews, a weight and denomination of money. For silver
+it was equivalent to 3,000 shekels, and in weight was equal to about
+93
+
+3. Inclination; will; disposition; desire. [Obs.]
+They rather counseled you to your talent than to your profit.
+Chaucer.
+
+4. Intellectual ability, natural or acquired; mental endowment or
+capacity; skill in accomplishing; a special gift, particularly in
+business, art, or the like; faculty; a use of the word probably
+originating in the Scripture parable of the talents (Matt. xxv. 14-
+30).
+He is chiefly to be considered in his three different talents, as a
+critic, a satirist, and a writer of odes. Dryden.
+His talents, his accomplishments, his graceful manners, made him
+generally popular. Macaulay.
+
+Syn.
+ -- Ability; faculty; gift; endowment. See Genius.
+
+TALENTED
+Tal"ent*ed, a.
+
+Defn: Furnished with talents; possessing skill or talent; mentally
+gifted. Abp. Abbot (1663).
+
+Note: This word has been strongly objected to by Coleridge and some
+other critics, but, as it would seem, upon not very good grounds, as
+the use of talent or talents to signify mental ability, although at
+first merely metaphorical, is now fully established, and talented, as
+a formative, is just as analogical and legitimate as gifted, bigoted,
+moneyed, landed, lilied, honeyed, and numerous other adjectives
+having a participal form, but derived directly from nouns and not
+from verbs.
+
+TALES
+Ta"les, n. Etym: [L., pl. of talis such (persons).] (Law) (a) pl.
+
+Defn: Persons added to a jury, commonly from those in or about the
+courthouse, to make up any deficiency in the number of jurors
+regularly summoned, being like, or such as, the latter. Blount.
+Blackstone. (b) syntactically sing.
+
+Defn: The writ by which such persons are summoned. Tales book, a book
+containing the names of such as are admitted of the tales. Blount.
+Craig.
+ -- Tales de circumstantibus Etym: [L.], such, or the like, from
+those standing about.
+
+TALESMAN
+Tales"man, n.; pl. Talesmen (. (Law)
+
+Defn: A person called to make up a deficiency in the number of jurors
+when a tales is awarded. Wharton.
+
+TALETELLER
+Tale"tell`er, n.
+
+Defn: One who tells tales or stories, especially in a mischievous or
+officious manner; a talebearer; a telltale; a tattler.
+
+
+ZOOTOMIST; ZOOETOMIST
+Zo*öt"o*mist, n. Etym: [Cf. F. zootomiste.]
+
+Defn: One who dissects animals, or is skilled in zoötomy.
+
+ZOOTOMY; ZOOETOMY
+Zo*öt"o*my, n. Etym: [Zoö- + Gr. zootomie.]
+
+Defn: The dissection or the anatomy of animals; -- distinguished from
+androtomy.
+
+ZOOTROPHIC; ZOOETROPHIC
+Zo`ö*troph"ic, a. Etym: [Gr. Zoö-, and Trophic.] (Physiol.)
+
+Defn: Of or pertaining to the nourishment of animals.
+
+ZOOZOO
+Zoo"zoo`, n. Etym: [Of imitative origin.] (Zoöl.)
+
+Defn: The wood pigeon. [Prov. Eng.]
+
+ZOPE
+Zope, n. Etym: [G.] (Zoöl.)
+
+Defn: A European fresh-water bream (Abramis ballerus).
+
+ZOPILOTE
+Zo"pi*lote, n. Etym: [Sp.] (Zoöl.)
+
+Defn: The urubu, or American black vulture.
+
+ZORIL
+Zor"il, n. (Zoöl.)
+
+Defn: Same as Zorilla.
+
+ZORILLA
+Zo*ril"la, n. Etym: [Sp. zorilla, zorillo, dim. of zorra, zorro, a
+fox: cf. F. zorille.] (Zoöl.)
+
+Defn: Either one of two species of small African carnivores of the
+genus Ictonyx allied to the weasels and skunks. [Written also zoril,
+and zorille.]
+
+Note: The best-known species (Ictonyx zorilla) has black shiny fur
+with white bands and spots. It has anal glands which produce a very
+offensive secretion, similar to that of the skunk. It feeds upon
+birds and their eggs and upon small mammals, and is often very
+destructive to poultry. It is sometimes tamed by the natives, and
+kept to destroy rats and mice. Called also mariput, Cape polecat, and
+African polecat. The name is sometimes erroneously applied to the
+American skunk.
+
+ZOROASTRIAN
+Zo`ro*as"tri*an, a.
+
+Defn: Of or pertaining to Zoroaster, or his religious system.
+
+ZOROASTRIAN
+Zo`ro*as"tri*an, n.
+
+Defn: A follower of Zoroaster; one who accepts Zoroastrianism.
+
+ZOROASTRIANISM
+Zo`ro*as"tri*an*ism, n.
+
+Defn: The religious system of Zoroaster, the legislator and prophet
+of the ancient Persians, which was the national faith of Persia;
+mazdeism. The system presupposes a good spirit (Ormuzd) and an
+opposing evil spirit (Ahriman). Cf. Fire worship, under Fire, and
+Parsee.
+
+ZOROASTRISM
+Zo`ro*as"trism, n.
+
+Defn: Same as Zoroastrianism. Tylor.
+
+ZOSTER
+Zos"ter, n. Etym: [L., fr. Gr. Zone.] (Med.)
+
+Defn: Shingles.
+
+ZOSTERA
+Zos"te*ra, n. Etym: [NL.] (Bot.)
+
+Defn: A genus of plants of the Naiadaceæ, or Pondweed family. Zostera
+marina is commonly known as sea wrack, and eelgrass.
+
+ZOSTEROPS
+Zos"ter*ops, n. Etym: [NL., fr. Gr. (Zoöl.)
+
+Defn: A genus of birds that comprises the white-eyes. See White-eye.
+
+ZOUAVE
+Zouave, n. Etym: [F., fr. Ar. Zouaoua a tribe of Kabyles living among
+the Jurjura mountains in Algeria.] (Mil.)
+(a) One of an active and hardy body of soldiers in the French
+service, originally Arabs, but now composed of Frenchmen who wear the
+Arab dress.
+(b) Hence, one of a body of soldiers who adopt the dress and drill of
+the Zouaves, as was done by a number of volunteer regiments in the
+army of the United States in the Civil War, 1861-65.
+
+ZOUNDS
+Zounds, interj. Etym: [Contracted from God's wounds.]
+
+Defn: An exclamation formerly used as an oath, and an expression of
+anger or wonder.
+
+ZOUTCH
+Zoutch, v. t. (Cookery)
+
+Defn: To stew, as flounders, eels, etc., with just enough or liquid
+to cover them. Smart.
+
+ZUBR
+Zubr, n. Etym: [Polish .] (Zoöl.)
+
+Defn: The aurochs.
+
+ZUCHE
+Zuche, n.
+
+Defn: A stump of a tree. Cowell.
+
+ZUCHETTO
+Zu*chet"to, n. Etym: [It. zucchetto.] (R. C. Ch.)
+
+Defn: A skullcap covering the tonsure, worn under the berretta. The
+pope's is white; a cardinal's red; a bishop's purple; a priest's
+black.
+
+ZUFOLO
+Zu"fo*lo, n. Etym: [It.] (Mus.)
+
+Defn: A little flute or flageolet, especially that which is used to
+teach birds. [Written also zuffolo.]
+
+ZUIAN
+Zu"ñi*an, a.
+
+Defn: Of or pert. to the Zuñis, or designating their linguistic
+stock. --n.
+
+Defn: A Zuñi.
+
+ZUISIN
+Zui"sin, n. (Zoöl.)
+
+Defn: The American widgeon. [Local, U. S.]
+
+ZULU
+Zu"lu, n. [Also Zooloo.]
+
+1. Any member of the tribe of Zulus; a Zulu-Kaffir. See Zulus.
+
+2.  (Philol.) One of the most important members of the South African,
+or Bantu, family of languages, spoken partly in Natal and partly in
+Zululand, but understood, and more or less in use, over a wide
+territory, at least as far north as the Zambezi; -- called also Zulu-
+Kaffir.
+
+ZULU-KAFFIR
+Zu"lu-Kaf"fir, n.
+
+Defn: A member of the Bantu race comprising the Zulus and the
+Kaffirs.
+
+ZULUS
+Zu"lus, n. pl.; sing. Zulu (. (Ethnol.)
+
+Defn: The most important tribe belonging to the Kaffir race. They
+inhabit a region on the southeast coast of Africa, but formerly
+occupied a much more extensive country. They are noted for their
+warlike disposition, courage, and military skill.
+
+ZUMBOORUK
+Zum*boo"ruk, n. Etym: [Turk. & Ar. zamb, fr. Ar. zamb a hornet.]
+(Mil.)
+
+Defn: A small cannon supported by a swiveled rest on the back of a
+camel, whence it is fired, -- used in the East.
+
+ZUMIC; ZUMOLOGICAL; ZUMOLOGY; ZUMOMETER
+Zu"mic, a., Zu`mo*log"ic*al, a., Zu*mol"o*gy, n., Zu*mom"e*ter, n.,
+etc.
+
+Defn: See Zymic, Zymological, etc.
+
+ZUNIS
+Zu"nis, n. pl.; sing. Zuni (. (Ethnol.)
+
+Defn: A tribe of Pueblo Indians occupying a village in New Mexico, on
+the Zuni River.
+
+ZUNYITE
+Zun"yite, n. (Min.)
+
+Defn: A fluosilicate of alumina occurring in tetrahedral crystals at
+the Zuñi mine in Colorado.
+
+ZWANZIGER
+Zwan"zi*ger, n. Etym: [G.]
+
+Defn: Am Austrian silver coin equivalent to 20 kreutzers, or about 10
+cents.
+
+ZWIEBACK
+Zwie"back`, n. [G., fr. zwie-two, twice (see Twice) + backen to
+bake.]
+
+Defn: A kind of biscuit or  rusk first baked in a loaf and afterwards
+cut and toasted.
+
+ZWINGLIAN
+Zwing"li*an, a. (Theol.)
+
+Defn: Of or pertaining to Ulric Zwingli (1481-1531), the reformer of
+German Switzerland, who maintained that in the Lord's Supper the true
+body of Christ is present by the contemplation of faith but not in
+essence or reality, and that the sacrament is a memorial without
+mystical elements. -- n.
+
+Defn: A follower of Zwingli.
+
+ZYGANTRUM
+Zy*gan"trum, n.; pl. Zygantra. Etym: [Gr. (Anat.)
+
+Defn: See under Zygosphene.
+
+ZYGAPOPHYSIS
+Zyg`a*poph"y*sis, n.; pl. Zygapophyses. Etym: [Gr. apophysis.]
+(Anat.)
+
+Defn: One of the articular processes of a vertebra, of which there
+are usually four, two anterior and two posterior. See under Vertebra.
+ -- Zyg`ap*o*phys"i*al, a.
+
+ZYGENID
+Zyg"e*nid, n. Etym: [Cf. Gr. (Zoöl.)
+
+Defn: Any one of numerous species of moths of the family Zygænidæ,
+most of which are bright colored. The wood nymph and the vine
+forester are examples. Also used adjectively.
+
+ZYGOBRANCHIA
+Zyg`o*bran"chi*a, n. pl. Etym: [NL., from Gr. (Zoöl.)
+
+Defn: A division of marine gastropods in which the gills are
+developed on both sides of the body and the renal organs are also
+paired. The abalone (Haliotis) and the keyhole limpet (Fissurella)
+are examples.
+
+ZYGOBRANCHIATE
+Zyg`o*bran"chi*ate, a. (Zoöl.)
+
+Defn: Of or pertaining to the Zygobranchia.
+
+ZYGODACTYL; ZYGODACTYLE
+Zyg`o*dac"tyl, Zyg`o*dac"tyle, n. Etym: [See Zygodactylic.] (Zoöl.)
+
+Defn: Any zygodactylous bird.
+
+ZYGODACTYLAE
+Zyg`o*dac"ty*læ, n. pl. Etym: [NL.] (Zoöl.)
+
+Defn: The zygodactylous birds. In a restricted sense applied to a
+division of birds which includes the barbets, toucans, honey guides,
+and other related birds.
+
+ZYGODACTYLI
+Zyg`o*dac"ty*li, n. pl. Etym: [NL.] (Zoöl.)
+
+Defn: Same as Scansores.
+
+ZYGODACTYLIC; ZYGODACTYLOUS
+Zyg`o*dac"ty*lic, Zyg`o*dac"tyl*ous, a. Etym: [Gr. zygodactyle.]
+(Zoöl.)
+
+Defn: Yoke-footed; having the toes disposed in pairs; -- applied to
+birds which have two toes before and two behind, as the parrot,
+cuckoo, woodpecker, etc.
+
+ZYGOMA
+Zy*go"ma, n. Etym: [NL., fr. Gr. (Anat.)
+(a) The jugal, malar, or cheek bone.
+(b) The zygomatic process of the temporal bone.
+(c) The whole zygomatic arch.
+
+ZYGOMATIC
+Zyg`o*mat"ic, a. Etym: [Cf. F. zygomatique.] (Anat.)
+
+Defn: Of, pertaining to, or in the region of, the zygoma. Zygomatic
+arch, the arch of bone beneath the orbit, formed in most mammals by
+the union of the malar, or jugal, with the zygomatic process of the
+temporal bone. In the lower vertebrates other bones may help to form
+it, and there may be two arches on each side of the skull, as in some
+reptiles.
+ -- Zygomatic process, a process of the temporal or squamosal bone
+helping to form the zygomatic arch.
+
+ZYGOMORPHIC; ZYGOMORPHOUS
+Zyg`o*mor"phic, Zyg`o*mor"phous, a. Etym: [Gr. (Biol.)
+
+Defn: Symmetrical bilaterally; -- said of organisms, or parts of
+organisms, capable of division into two symmetrical halves only in a
+single plane.
+
+ZYGOPHYTE
+Zy"go*phyte, n. Etym: [Gr. (Bot.)
+
+Defn: Any plant of a proposed class or grand division (Zygophytes,
+Zygophyta, or Zygosporeæ), in which reproduction consists in the
+union of two similar cells. Cf. Oöphyte.
+
+ZYGOSIS
+Zy*go"sis, n. Etym: [NL., fr. Gr. (Biol.)
+
+Defn: Same as Conjugation.
+
+ZYGOSPERM
+Zyg"o*sperm, n. Etym: [Gr. sperm.] (Bot.)
+
+Defn: A spore formed by the union of the contents of two similar
+cells, either of the same or of distinct individual plants.
+Zygosperms are found in certain orders of algæ and fungi.
+
+ZYGOSPHENE
+Zyg"o*sphene, n. Etym: [Gr. (Anat.)
+
+Defn: A median process on the front part of the neural arch of the
+vertebræ of most snakes and some lizards, which fits into a fossa,
+called the zygantrum, on the back part of the arch in front.
+
+ZYGOSPORE
+Zyg"o*spore, n. Etym: [Gr. spore.] (Bot.)
+(a) Same as Zygosperm.
+(b) A spore formed by the union of several zoöspores; -- called also
+zygozoöspore.
+
+ZYLONITE
+Zy"lon*ite, n. Etym: [Gr.
+
+Defn: Celluloid.
+
+ZYMASE
+Zym"ase, n. Etym: [From Zyme.] (Physiol. Chem.)
+
+Defn: A soluble ferment, or enzyme. See Enzyme.
+
+ZYME
+Zyme, n. Etym: [Gr.
+
+1. A ferment.
+
+2. (Med.)
+
+Defn: The morbific principle of a zymotic disease. Quain.
+
+ZYMIC
+Zym"ic, a. (Old Chem.)
+
+Defn: Pertaining to, or produced by, fermentation; -- formerly, by
+confusion, used to designate lactic acid.
+
+ZYMOGEN
+Zym"o*gen, n. Etym: [Zyme + -gen.] (Physiol. Chem.)
+
+Defn: A mother substance, or antecedent, of an enzyme or chemical
+ferment; -- applied to such substances as, not being themselves
+actual ferments, may by internal changes give rise to a ferment.
+The pancreas contains but little ready-made ferment, though there is
+present in it a body, zymogen, which gives birth to the ferment.
+Foster.
+
+ZYMOGENE
+Zym"o*gene, n. Etym: [Zyme + root of Gr. (Biol.)
+
+Defn: One of a physiological group of globular bacteria which
+produces fermentations of diverse nature; -- distinguished from
+pathogene.
+
+ZYMOGENIC
+Zym`o*gen"ic, a. (Biol.)
+(a) Pertaining to, or formed by, a zymogene.
+(b) Capable of producing a definite zymogen or ferment. Zymogenic
+organism (Biol.), a microörganism, such as the yeast plant of the
+Bacterium lactis, which sets up certain fermentative processes by
+which definite chemical products are formed; -- distinguished from a
+pathogenic organism. Cf. Micrococcus.
+
+ZYMOLOGIC; ZYMOLOGICAL
+Zy`mo*log"ic, Zy`mo*log"ic*al, a. Etym: [Cf. F. zymologique.]
+
+Defn: Of or pertaining to zymology.
+
+ZYMOLOGIST
+Zy*mol"o*gist, n.
+
+Defn: One who is skilled in zymology, or in the fermentation of
+liquors.
+
+ZYMOLOGY
+Zy*mol"o*gy, n. Etym: [Zyme + -logy: cf. F. zymologie.]
+
+Defn: A treatise on the fermentation of liquors, or the doctrine of
+fermentation. [Written also zumology.]
+
+ZYMOLYSIS
+Zy*mol"y*sis, n. [NL. See Zyme, and Lysis.] (Physiol. Chem.)
+
+Defn: The action of enzymes; also, the changes produced by such
+action. --Zy`mo*lyt"ic (#), a.
+
+
+
+ZYMOME
+Zy"mome, n. Etym: [Gr. (Old Chem.)
+
+Defn: A glutinous substance, insoluble in alcohol, resembling
+legumin; -- now called vegetable fibrin, vegetable albumin, or gluten
+casein.
+
+ZYMOMETER; ZYMOSIMETER
+Zy*mom"e*ter, Zy`mo*sim"e*ter, n. Etym: [Gr. -meter: cf. F.
+zymosimètre.]
+
+Defn: An instrument for ascertaining the degree of fermentation
+occasioned by the mixture of different liquids, and the degree of
+heat which they acquire in fermentation.
+
+ZYMOPHYTE
+Zym"o*phyte, n. Etym: [Zyme + Gr. (Physiol. Chem.)
+
+Defn: A bacteroid ferment.
+
+ZYMOSE
+Zy*mose", n. (Chem.)
+
+Defn: Invertin.
+
+ZYMOSIS
+Zy*mo"sis, n. Etym: [NL., fr. Gr. (Med.)
+(a) A fermentation; hence, an analogous process by which an
+infectious disease is believed to be developed.
+(b) A zymotic disease. [R.]
+
+ZYMOTIC
+Zy*mot"ic, a. Etym: [Gr.
+
+1. Of, pertaining to, or caused by, fermentation.
+
+2. (Med.)
+
+Defn: Designating, or pertaining to, a certain class of diseases. See
+Zymotic disease, below. Zymotic disease (Med.), any epidemic,
+endemic, contagious, or sporadic affection which is produced by some
+morbific principle or organism acting on the system like a ferment.
+
+ZYTHEM
+Zy"them, n.
+
+Defn: See Zythum.
+
+ZYTHEPSARY
+Zy*thep"sa*ry, n. Etym: [Gr.
+
+Defn: A brewery. [R.]
+
+ZYTHUM
+Zy"thumn. Etym: [L.fr. Gr.
+
+Defn: A kind of ancient malt beverage; a liquor made from malt and
+wheat. [Written also zythem.]
+
+
+
+
+
+
+End of Project Gutenberg's Webster's Unabridged Dictionary, by Various
+
+*** END OF THIS PROJECT GUTENBERG EBOOK WEBSTER'S UNABRIDGED DICTIONARY ***
+
+***** This file should be named 29765-8.txt or 29765-8.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/2/9/7/6/29765/
+
+Produced by Graham Lawrence
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.net/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.net
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.net),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need are critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including including checks, online payments and credit card
+donations.  To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.net
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
