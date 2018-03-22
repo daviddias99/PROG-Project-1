@@ -300,6 +300,13 @@ int main()
 	sortVector(wordVector);
 	removeDuplicates(wordVector);
 
+	outputFile.open(outputFile_Name);
+
+	for (int i = 0; i < wordVector.size(); i++)
+	{
+		outputFile << wordVector.at(i)<< endl;	
+	}
+
 
 
 	return 0;
