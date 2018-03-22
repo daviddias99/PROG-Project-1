@@ -25,14 +25,28 @@ void removeSpacesFromEdges(string &s)
 	int i = 0;
 
 	while (isspace(s.at(i))) // remove spaces at the beggining of the string
+	{
 		s.erase(i, 1);
+		if (s == "")
+		{
+			break;
+		}
+
+	}
+		
 
 	int j = s.length() - 1;
-
-	while (isspace(s.at(j))) // remove spaces at the end of the string
+	if (s != "")
 	{
-		s.erase(j, 1);
-		j--;
+		while (isspace(s.at(j))) // remove spaces at the end of the string
+		{
+			s.erase(j, 1);
+			j--;
+			if (s == "")
+			{
+				break;
+			}
+		}
 	}
 }
 
