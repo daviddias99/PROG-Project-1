@@ -136,7 +136,7 @@ void addHeadline(string line, vector<string>& wordVector)
 			removeSpacesFromEdges(currentWord);
 
 			if (isSimpleWord(currentWord))
-				addToVector(wordVector, line);
+				addToVector(wordVector, currentWord);
 
 			currentWord = "";
 		}
@@ -147,7 +147,7 @@ void addHeadline(string line, vector<string>& wordVector)
 	removeSpacesFromEdges(currentWord);
 
 	if (isSimpleWord(currentWord))
-		addToVector(wordVector, line);
+		addToVector(wordVector, currentWord);
 }
 
 

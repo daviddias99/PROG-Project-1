@@ -1,52 +1,3 @@
-The Project Gutenberg EBook of Webster's Unabridged Dictionary, by Various
-
-This eBook is for the use of anyone anywhere at no cost and with
-almost no restrictions whatsoever.  You may copy it, give it away or
-re-use it under the terms of the Project Gutenberg License included
-with this eBook or online at www.gutenberg.net
-
-
-Title: Webster's Unabridged Dictionary
-
-Author: Various
-
-Release Date: August 22, 2009 [EBook #29765]
-[Last updated: May 18, 2014]
-
-Language: English
-
-Character set encoding: ISO-8859-1
-
-*** START OF THIS PROJECT GUTENBERG EBOOK WEBSTER'S UNABRIDGED DICTIONARY ***
-
-
-
-
-Produced by Graham Lawrence
-
-
-
-
-A
-A (named a in the English, and most commonly ä in other languages).
-
-Defn: The first letter of the English and of many other alphabets.
-The capital A of the alphabets of Middle and Western Europe, as also
-the small letter (a), besides the forms in Italic, black letter,
-etc., are all descended from the old Latin A, which was borrowed from
-the Greek Alpha, of the same form; and this was made from the first
-letter (Aleph, and itself from the Egyptian origin. The Aleph was a
-consonant letter, with a guttural breath sound that was not an
-element of Greek articulation; and the Greeks took it to represent
-their vowel Alpha with the ä sound, the Phoenician alphabet having no
-vowel symbols. This letter, in English, is used for several different
-vowel sounds. See Guide to pronunciation, §§ 43-74. The regular long
-a, as in fate, etc., is a comparatively modern sound, and has taken
-the place of what, till about the early part of the 17th century, was
-a sound of the quality of ä (as in far).
-
-2. (Mus.)
-
 Defn: The name of the sixth tone in the model major scale (that in
 C), or the first tone of the minor scale, which is named after it the
 scale in A minor. The second string of the violin is tuned to the A
@@ -434,3 +385,122 @@ paths of rectitude, the blood forsook his cheeks. It may be used
 either in a good or in a bad sense.
 
 ABANDON
+A*ban"don, n. Etym: [F. abandon. fr. abandonner. See Abandon, v.]
+
+Defn: Abandonment; relinquishment. [Obs.]
+
+ABANDON
+A`ban`don", n. Etym: [F. See Abandon.]
+
+Defn: A complete giving up to natural impulses; freedom from
+artificial constraint; careless freedom or ease.
+
+ABANDONED
+A*ban"doned, a.
+
+1. Forsaken, deserted. "Your abandoned streams." Thomson.
+
+2. Self-abandoned, or given up to vice; extremely wicked, or sinning
+without restraint; irreclaimably wicked ; as, an abandoned villain.
+
+Syn.
+ -- Profligate; dissolute; corrupt; vicious; depraved; reprobate;
+wicked; unprincipled; graceless; vile.
+ -- Abandoned, Profligate, Reprobate. These adjectives agree in
+expressing the idea of great personal depravity. Profligate has
+reference to open and shameless immoralities, either in private life
+or political conduct; as, a profligate court, a profligate ministry.
+Abandoned is stronger, and has reference to the searing of conscience
+and hardening of heart produced by a man's giving himself wholly up
+to iniquity; as, a man of abandoned character. Reprobate describes
+the condition of one who has become insensible to reproof, and who is
+morally abandoned and lost beyond hope of recovery.
+God gave them over to a reprobate mind. Rom. i. 28.
+
+ABANDONEDLY
+A*ban"doned*ly, adv.
+
+Defn: Unrestrainedly.
+
+ABANDONEE
+A*ban`don*ee", n. (Law)
+
+Defn: One to whom anything is legally abandoned.
+
+ABANDONER
+A*ban"don*er, n.
+
+Defn: One who abandons. Beau. & Fl.
+
+ABANDONMENT
+A*ban"don*ment, n. Etym: [Cf. F. abandonnement.]
+
+1. The act of abandoning, or the state of being abandoned; total
+desertion; relinquishment.
+The abandonment of the independence of Europe. Burke.
+
+2. (Mar. Law)
+
+Defn: The relinquishment by the insured to the underwriters of what
+may remain of the property insured after a loss or damage by a peril
+insured against.
+
+3. (Com. Law)
+
+Defn: (a) The relinquishment of a right, claim, or privilege, as to
+mill site, etc. (b) The voluntary leaving of a person to whom one is
+bound by a special relation, as a wife, husband, or child; desertion.
+
+4. Careless freedom or ease; abandon. [R.] Carlyle.
+
+ABANDUM
+A*ban"*dum, n. Etym: [LL. See Abandon.] (Law)
+
+Defn: Anything forfeited or confiscated.
+
+ABANET
+Ab"a*net, n.
+
+Defn: See Abnet.
+
+ABANGA
+A*ban"ga, n. Etym: [Name given by the negroes in the island of St.
+Thomas.]
+
+Defn: A West Indian palm; also the fruit of this palm, the seeds of
+which are used as a remedy for diseases of the chest.
+
+ABANNATION; ABANNITION
+Ab`an*na"tion, Ab`an*nition, n. Etym: [LL. abannatio; ad + LL.
+bannire to banish.] (Old Law)
+
+Defn: Banishment. [Obs.] Bailey.
+
+ABARTICULATION
+Ab`ar*tic`u*la"tion, n. Etym: [L. ab + E. articulation : cf. F.
+abarticulation. See Article.] (Anat.)
+
+Defn: Articulation, usually that kind of articulation which admits of
+free motion in the joint; diarthrosis. Coxe.
+
+ABASE
+A*base", v.t. [imp.&p.p. Abased; p.pr. & vb. n. Abasing.] Etym: [F.
+abaisser, LL. abassare, abbassare ; ad + bassare, fr. bassus low. See
+Base, a.]
+
+1. To lower or depress; to throw or cast down; as, to abase the eye.
+[Archaic] Bacon.
+Saying so, he abased his lance. Shelton.
+
+2. To cast down or reduce low or lower, as in rank, office, condition
+in life, or estimation of worthiness; to depress; to humble; to
+degrade.
+Whosoever exalteth himself shall be abased. Luke xiv. ll.
+
+Syn.
+ -- To Abase, Debase, Degrade. These words agree in the idea of
+bringing down from a higher to a lower state. Abase has reference to
+a bringing down in condition or feelings; as to abase one's self
+before God. Debase has reference to the bringing down of a thing in
+purity, or making it base. It is, therefore, always used in a bad
+sense, as, to debase the coin of the kingdom, to debase the m
