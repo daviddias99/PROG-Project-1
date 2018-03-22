@@ -5,6 +5,16 @@
 
 using namespace std;
 
+/**
+Adds a word to the word vector
+@param wordVector: vector of strings
+@param word: word to be added to the word vector
+*/
+
+void addToVector(vector<string>& wordVector, string word)
+{
+	wordVector.push_back(word);
+}
 
 /**
 Modifies string to the same string without blank spaces
@@ -113,8 +123,9 @@ bool hasMultipleWords(string line)
 /**
 For headlines with multiple words: decomposes in single words/expressions and adds them to vector if they're simple words
 @param line: string to be evaluated
+@param wordVector: vector of words
 */
-void addHeadline(string line)
+void addHeadline(string line, vector<string>& wordVector)
 {
 	string currentWord = "";
 
@@ -125,7 +136,7 @@ void addHeadline(string line)
 			removeSpacesFromEdges(currentWord);
 
 			if (isSimpleWord(currentWord))
-				cout << currentWord << endl;
+				addToVector(wordVector, line);
 
 			currentWord = "";
 		}
@@ -136,7 +147,7 @@ void addHeadline(string line)
 	removeSpacesFromEdges(currentWord);
 
 	if (isSimpleWord(currentWord))
-		cout << currentWord << endl;
+		addToVector(wordVector, line);
 }
 
 
@@ -147,17 +158,22 @@ void processLine(string line, vector<string>& wordVector)
 {
 	if (isHeadline(line))
 	{
+		removeSpacesFromEdges(line);
+
+
 		if (isSimpleWord(line))
 		{
-			addToVector(line);
+			addToVector(wordVector, line);
 		}
 		else
 		{
-			decomporlinha;
+			if (hasMultipleWords(line))
+			{
+				addHeadline(line, wordVector);
+			}
 		}
 	}
 
-	break;
 }
 
 
@@ -165,22 +181,18 @@ void processLine(string line, vector<string>& wordVector)
 Reads the contents of the input File, line by line, calls the functions that process the line, and updates the counters(for output purposes)
 @param iFile: address of the input file
 */
-void readFile(ifstream& iFile)
+void readFile(ifstream& iFile, vector<string>& wordVector)
 {
 	string inputLine;
 
 
-	tratarLinha();
-	atualizar_contadores;
+	processLine(inputLine, wordVector);
 
 	while (!iFile.eof()) // testar se chegou o eof
 	{
 		getline(iFile, inputLine);
-		tratarLinha();
-		atualizar_contadores;
+		processLine(inputLine, wordVector);
 	}
-
-
 }
 
 
@@ -248,7 +260,7 @@ void removeDuplicates(vector<string>& wordVector)
 
 int main()
 {
-	
+
 	ifstream inputFile;
 	ofstream outputFile;
 
@@ -284,8 +296,10 @@ int main()
 	cout << "Extracting simple words from file " << inputFile_Name << "," << endl;
 	cout << "beginning with letter ..." << endl;
 
-	readFile(inputFile);
-	
+	readFile(inputFile, wordVector);
+	sortVector(wordVector);
+	removeDuplicates(wordVector);
+
 
 
 	return 0;
