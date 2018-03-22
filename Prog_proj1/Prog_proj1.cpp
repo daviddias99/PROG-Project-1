@@ -209,6 +209,25 @@ void readFile(ifstream& iFile, vector<string>& wordVector)
 	}
 }
 
+/**
+Writes the contents of the word vector into de output file. (Maybe change so that it doesn't write anything)
+@param oFile: address of the output file
+@param wordVector: vector with the contents to write on the file
+@param filaName: name of the output file
+*/
+
+void writeFile(ofstream& oFile, vector<string>& wordVector, string fileName)
+{
+	cout << "Saving words into file " << fileName << " ..." << endl;
+
+	oFile.open(fileName);
+
+	for (int i = 0; i < wordVector.size(); i++)
+	{
+		oFile<< wordVector.at(i) << endl;
+	}
+}
+
 
 /**
 .Swaps two chosen elements from a wordVector
@@ -311,16 +330,19 @@ int main()
 	cout << "beginning with letter ..." << endl;
 
 	readFile(inputFile, wordVector);
+
+	cout << "Number of simple words = " << wordVector.size() << endl;
+
+	cout << "Sorting words ..." << endl;
 	sortVector(wordVector);
+
+	cout << "Removing duplicate words ..." << endl;
 	removeDuplicates(wordVector);
 
-	outputFile.open(outputFile_Name);
+	cout << "Number of non duplicate words = " << wordVector.size() << endl;
 
-	for (int i = 0; i < wordVector.size(); i++)
-	{
-		outputFile << wordVector.at(i)<< endl;	
-	}
-
+	writeFile(outputFile, wordVector, outputFile_Name);
+	cout << "End of processing." << endl;
 
 
 	return 0;
