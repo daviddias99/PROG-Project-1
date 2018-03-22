@@ -27,7 +27,7 @@ void removeSpacesFromEdges(string &s)
 	while (isspace(s.at(i))) // remove spaces at the beggining of the string
 	{
 		s.erase(i, 1);
-		if (s == "")
+		if (s == "") //Pus isto
 		{
 			break;
 		}
@@ -36,13 +36,13 @@ void removeSpacesFromEdges(string &s)
 		
 
 	int j = s.length() - 1;
-	if (s != "")
+	if (s != "") //Pus isto
 	{
 		while (isspace(s.at(j))) // remove spaces at the end of the string
 		{
 			s.erase(j, 1);
 			j--;
-			if (s == "")
+			if (s == "") //Pus isto
 			{
 				break;
 			}
