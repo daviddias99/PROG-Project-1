@@ -7,6 +7,26 @@ using namespace std;
 
 
 /**
+Modifies string to the same string without blank spaces
+@param s: passed by reference, string whose spaces we want to delete
+*/
+void removeSpacesFromEdges(string &s)
+{
+	int i = 0;
+
+	while (isspace(s.at(i))) // remove spaces at the beggining of the string
+		s.erase(i, 1);
+
+	int j = s.length() - 1;
+
+	while (isspace(s.at(j))) // remove spaces at the end of the string
+	{
+		s.erase(j, 1);
+		j--;
+	}
+}
+
+/**
 Checks if the string is a headline
 @param line: string to be evaluated
 @return value: true if string only contains uppercase letters ('A'-'Z') or the characters ' ' (space), ';' (semicolon), '-' (hyphen), or '\'' (apostrophe)
@@ -15,6 +35,9 @@ bool isHeadline(string line)
 {
 	bool headline = true; // return value
 
+	if (line == "") return false;
+
+	removeSpacesFromEdges(line);
 
 	for (int i = 0; i < line.size(); i++)
 	{
@@ -41,7 +64,7 @@ bool isHeadline(string line)
 }
 
 /**
-Checks if there's any non alphabetic char
+Checks if there's any non alphabetic char **WARNING** should use function  removeSpaces before using isSimpleWord
 @param line: string to be evaluated
 @return value: true if word is simple and valid to add to main vector
 */
@@ -87,19 +110,38 @@ bool hasMultipleWords(string line)
 	return hasSemicolon;
 }
 
-/*
-[x] getline is working, all functions tested
-[] decompose function
+/**
+For headlines with multiple words: decomposes in single words/expressions and adds them to vector if they're simple words
+@param line: string to be evaluated
 */
+void addHeadline(string line)
+{
+	string currentWord = "";
 
+	for (int i = 0; i < line.length(); i++)
+	{
+		if (line.at(i) == ';')
+		{
+			removeSpacesFromEdges(currentWord);
 
+			if (isSimpleWord(currentWord))
+				cout << currentWord << endl;
+
+			currentWord = "";
+		}
+		else
+			currentWord.push_back(line.at(i));
+	}
+
+	removeSpacesFromEdges(currentWord);
+
+	if (isSimpleWord(currentWord))
+		cout << currentWord << endl;
+}
 
 
 //------------------------------------------------------------------------------------------------------------
 
-/**
-
-*/
 
 void processLine(string line, vector<string>& wordVector)
 {
@@ -123,7 +165,6 @@ void processLine(string line, vector<string>& wordVector)
 Reads the contents of the input File, line by line, calls the functions that process the line, and updates the counters(for output purposes)
 @param iFile: address of the input file
 */
-
 void readFile(ifstream& iFile)
 {
 	string inputLine;
@@ -147,7 +188,7 @@ void readFile(ifstream& iFile)
 
 int main()
 {
-
+	/*
 	ifstream inputFile;
 	ofstream outputFile;
 
@@ -184,7 +225,7 @@ int main()
 	cout << "beginning with letter ..." << endl;
 
 	readFile(inputFile);
-
+	*/
 
 
 	return 0;
