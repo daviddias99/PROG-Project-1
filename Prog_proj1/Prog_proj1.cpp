@@ -11,14 +11,9 @@ Adds a word to the word vector
 @param wordVector: vector of strings
 @param word: word to be added to the word vector
 */
-void addToVector(vector<string>& wordVector, string word, int& wordCount)
+void addToVector(vector<string>& wordVector, string word)
 {
 	wordVector.push_back(word);
-	
-	//Increment wordCount and write a dot if wordCount is divisible by 100 *****WARNING now is 5 for testing purposes******
-	wordCount++;
-	if (wordCount % 5 == 0)
-		cout << ".";
 }
 
 
@@ -137,7 +132,7 @@ For headlines with multiple words: decomposes in single words/expressions and ad
 @param wordVector: vector of words
 @param line: string to be evaluated
 */
-void addHeadline(vector<string>& wordVector, string line, int& wordCount)
+void addHeadline(vector<string>& wordVector, string line)
 {
 	string currentWord = "";
 
@@ -148,7 +143,7 @@ void addHeadline(vector<string>& wordVector, string line, int& wordCount)
 			removeSpacesFromEdges(currentWord);
 
 			if (isSimpleWord(currentWord))
-				addToVector(wordVector, currentWord, wordCount);
+				addToVector(wordVector, currentWord);
 
 			currentWord = "";
 		}
@@ -159,38 +154,41 @@ void addHeadline(vector<string>& wordVector, string line, int& wordCount)
 	removeSpacesFromEdges(currentWord);
 
 	if (isSimpleWord(currentWord))
-		addToVector(wordVector, currentWord, wordCount);
+		addToVector(wordVector, currentWord);
 }
 
 
 /**
-Processes individual lines by checking if they're headlines and if so adding valid words to vector
+Processes individual lines by checking if they're headlines and if so adding valid words to vector; also handles progress display
 @param line: line to be processed
 @param wordVector: vector that stores all the valid words
 */
-void processLine(string line, vector<string>& wordVector, char& currentInitial, int& wordCount)
+void processLine(string line, vector<string>& wordVector, char& currentInitial, int& headlineCount)
 {
 	if (isHeadline(line))
 	{
 		removeSpacesFromEdges(line);
 
-		if (line.at(0) != currentInitial) //If new initial is different than current initial, resets counter and changes currentInitial, displaying new initial on screen
+		if (line.at(0) != currentInitial) //If new initial is different than current initial changes currentInitial, displaying new initial on screen
 		{
 			currentInitial = line.at(0);
-			wordCount = 0;
-
 			cout << endl << currentInitial << endl;
 		}
 
+		//Increments headline counter and displays a dot on the screen if the counter is divisible by 100 ***WARNING its being divided by 5 for testing purposes***
+		headlineCount++;
+		if (headlineCount % 5 == 0)
+			cout << '.';
+
 		if (isSimpleWord(line))
 		{
-			addToVector(wordVector, line, wordCount);
+			addToVector(wordVector, line);
 		}
 		else
 		{
 			if (hasMultipleWords(line))
 			{
-				addHeadline(wordVector, line, wordCount);
+				addHeadline(wordVector, line);
 			}
 		}
 	}
@@ -206,15 +204,15 @@ void readFile(ifstream& iFile, vector<string>& wordVector)
 	string inputLine;
 
 	char currentInitial = '\0';
-	int wordCount = 0;
+	int headlineCount = 0;
 
 	getline(iFile, inputLine);
-	processLine(inputLine, wordVector, currentInitial, wordCount);
+	processLine(inputLine, wordVector, currentInitial, headlineCount);
 
 	while (!iFile.eof()) //Test for eof
 	{
 		getline(iFile, inputLine);
-		processLine(inputLine, wordVector, currentInitial, wordCount);
+		processLine(inputLine, wordVector, currentInitial, headlineCount);
 	}
 }
 
