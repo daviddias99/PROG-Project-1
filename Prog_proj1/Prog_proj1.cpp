@@ -159,15 +159,26 @@ void addHeadline(vector<string>& wordVector, string line)
 
 
 /**
-Processes individual lines by checking if they're headlines and if so adding valid words to vector
+Processes individual lines by checking if they're headlines and if so adding valid words to vector; also handles progress display
 @param line: line to be processed
 @param wordVector: vector that stores all the valid words
 */
-void processLine(string line, vector<string>& wordVector)
+void processLine(string line, vector<string>& wordVector, char& currentInitial, int& headlineCount)
 {
 	if (isHeadline(line))
 	{
 		removeSpacesFromEdges(line);
+
+		if (line.at(0) != currentInitial) //If new initial is different than current initial changes currentInitial, displaying new initial on screen
+		{
+			currentInitial = line.at(0);
+			cout << endl << currentInitial << endl;
+		}
+
+		//Increments headline counter and displays a dot on the screen if the counter is divisible by 100 ***WARNING its being divided by 5 for testing purposes***
+		headlineCount++;
+		if (headlineCount % 5 == 0)
+			cout << '.';
 
 		if (isSimpleWord(line))
 		{
@@ -192,13 +203,16 @@ void readFile(ifstream& iFile, vector<string>& wordVector)
 {
 	string inputLine;
 
+	char currentInitial = '\0';
+	int headlineCount = 0;
+
 	getline(iFile, inputLine);
-	processLine(inputLine, wordVector);
+	processLine(inputLine, wordVector, currentInitial, headlineCount);
 
 	while (!iFile.eof()) //Test for eof
 	{
 		getline(iFile, inputLine);
-		processLine(inputLine, wordVector);
+		processLine(inputLine, wordVector, currentInitial, headlineCount);
 	}
 }
 
@@ -237,7 +251,7 @@ void vectorSwap(vector<string>& wordVector, int pos1, int pos2)
 
 
 /**
-Uses bubble sort to sort and vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
+Uses bubble sort to sort a vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
 @param wordVector: reference to a vector
 */
 void sortVector(vector<string>& wordVector)
@@ -301,7 +315,7 @@ int main()
 	cin >> inputFile_Name;
 
 	//Checks if file extension is correct
-	while (inputFile_Name.substr(inputFile_Name.find_last_of('.'), 4) != ".txt")
+	while (inputFile_Name.size() > 3 && inputFile_Name.substr(inputFile_Name.size() - 4, 4) != ".txt")
 	{
 		cout << "Invalid file extension." << endl;
 		cout << "Dictionary file ? ";
@@ -338,6 +352,7 @@ int main()
 	readFile(inputFile, wordVector);
 	inputFile.close(); 
 
+	cout << endl << endl;
 	cout << "Number of simple words = " << wordVector.size() << endl;
 
 	cout << "Sorting words ..." << endl;
