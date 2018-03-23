@@ -5,50 +5,45 @@
 
 using namespace std;
 
+
 /**
 Adds a word to the word vector
 @param wordVector: vector of strings
 @param word: word to be added to the word vector
 */
-
 void addToVector(vector<string>& wordVector, string word)
 {
 	wordVector.push_back(word);
 }
 
+
 /**
-Modifies string to the same string without blank spaces.
+Modifies string by removing whitespaces from the beginning and end
 @param s: passed by reference, string whose spaces we want to delete
 */
 void removeSpacesFromEdges(string &s)
 {
-	int i = 0;
-
-	while (isspace(s.at(i))) // remove spaces at the beggining of the string
+	while (isspace(s.at(0))) //Remove spaces at the beginning of the string
 	{
-		s.erase(i, 1);
-		if (s == "") //Pus isto
-		{
+		s.erase(0, 1);
+		if (s == "")
 			break;
-		}
-
 	}
 		
-
-	int j = s.length() - 1;
-	if (s != "") //Pus isto
+	
+	if (s != "") 
 	{
-		while (isspace(s.at(j))) // remove spaces at the end of the string
+		int j = s.length() - 1;
+		while (isspace(s.at(j))) //Remove spaces at the end of the string
 		{
 			s.erase(j, 1);
 			j--;
-			if (s == "") //Pus isto
-			{
+			if (s == "")
 				break;
-			}
 		}
 	}
 }
+
 
 /**
 Checks if the string is a headline
@@ -57,7 +52,7 @@ Checks if the string is a headline
 */
 bool isHeadline(string line)
 {
-	bool headline = true; // return value
+	bool headline = true;
 
 	if (line == "") return false;
 
@@ -69,14 +64,14 @@ bool isHeadline(string line)
 
 		if (isalpha(currentChar))
 		{
-			if (currentChar != toupper(currentChar)) // check if char is alphabetic lower case
+			if (currentChar != toupper(currentChar)) //Check if char is alphabetic lower case
 			{
-				headline = false; // if char is lower case, return value is false and end loop
+				headline = false; //If char is lower case, return value is false and end loop
 
 				break;
 			}
 		}
-		else if ((currentChar != ' ') && (currentChar != '\'') && (currentChar != '-') && (currentChar != ';')) // if not letter and different than valid non alphabetic chars
+		else if ((currentChar != ' ') && (currentChar != '\'') && (currentChar != '-') && (currentChar != ';')) //If not letter and different than valid non alphabetic chars
 		{
 			headline = false;
 
@@ -87,8 +82,9 @@ bool isHeadline(string line)
 	return headline;
 }
 
+
 /**
-Checks if there's any non alphabetic char **WARNING** should use function  removeSpaces before using isSimpleWord
+Checks if there's any non alphabetic char **WARNING** should use function removeSpacesFromEdges before using isSimpleWord
 @param line: string to be evaluated
 @return value: true if word is simple and valid to add to main vector
 */
@@ -98,17 +94,16 @@ bool isSimpleWord(string line)
 
 	for (int i = 0; i < line.size(); i++)
 	{
-		char currentChar = line.at(i);
-
-		if (!isalpha(currentChar))
+		if (!isalpha(line.at(i))) 
 		{
 			simpleWord = false;
-			break;
+			break; //breaks if a non alphabetic char is found and returns false
 		}
 	}
 
 	return simpleWord;
 }
+
 
 /**
 Checks if headline needs to be decomposed
@@ -121,25 +116,23 @@ bool hasMultipleWords(string line)
 
 	for (int i = 0; i < line.size(); i++)
 	{
-		char currentChar = line.at(i);
-
-		if (currentChar == ';')
+		if (line.at(i) == ';')
 		{
-			hasSemicolon = true;
-
-			break;
+			hasSemicolon = true; 
+			break; //Ends loop if a semicolon is found, returning true
 		}
 	}
 
 	return hasSemicolon;
 }
 
+
 /**
 For headlines with multiple words: decomposes in single words/expressions and adds them to vector if they're simple words
-@param line: string to be evaluated
 @param wordVector: vector of words
+@param line: string to be evaluated
 */
-void addHeadline(string line, vector<string>& wordVector)
+void addHeadline(vector<string>& wordVector, string line)
 {
 	string currentWord = "";
 
@@ -165,15 +158,16 @@ void addHeadline(string line, vector<string>& wordVector)
 }
 
 
-//------------------------------------------------------------------------------------------------------------
-
-
+/**
+Processes individual lines by checking if they're headlines and if so adding valid words to vector
+@param line: line to be processed
+@param wordVector: vector that stores all the valid words
+*/
 void processLine(string line, vector<string>& wordVector)
 {
 	if (isHeadline(line))
 	{
 		removeSpacesFromEdges(line);
-
 
 		if (isSimpleWord(line))
 		{
@@ -183,74 +177,69 @@ void processLine(string line, vector<string>& wordVector)
 		{
 			if (hasMultipleWords(line))
 			{
-				addHeadline(line, wordVector);
+				addHeadline(wordVector, line);
 			}
 		}
 	}
-
 }
 
 
 /**
-Reads the contents of the input File, line by line, calls the functions that process the line, and updates the counters(for output purposes)
+Reads the contents of the input File, line by line, calls the functions that process the line
 @param iFile: address of the input file
 */
 void readFile(ifstream& iFile, vector<string>& wordVector)
 {
 	string inputLine;
 
-
+	getline(iFile, inputLine);
 	processLine(inputLine, wordVector);
 
-	while (!iFile.eof()) // testar se chegou o eof
+	while (!iFile.eof()) //Test for eof
 	{
 		getline(iFile, inputLine);
 		processLine(inputLine, wordVector);
 	}
 }
 
+
 /**
-Writes the contents of the word vector into de output file. (Maybe change so that it doesn't write anything)
+Writes the contents of the word vector into de output file.
 @param oFile: address of the output file
 @param wordVector: vector with the contents to write on the file
-@param filaName: name of the output file
+@param fileName: name of the output file
 */
-
 void writeFile(ofstream& oFile, vector<string>& wordVector, string fileName)
 {
-	cout << "Saving words into file " << fileName << " ..." << endl;
-
 	oFile.open(fileName);
 
 	for (int i = 0; i < wordVector.size(); i++)
 	{
-		oFile<< wordVector.at(i) << endl;
+		oFile << wordVector.at(i) << endl;
 	}
+
+	oFile.close();
 }
 
 
 /**
-.Swaps two chosen elements from a wordVector
-@param wordVector: reference to a vector of strings
+Swaps two chosen elements from a vector
+@param wordVector: reference to a vector
 @param pos1: integer containing a index of a position in the vector
 @param pos2: integer containing a index of a position in the vector
 */
-
-
 void vectorSwap(vector<string>& wordVector, int pos1, int pos2)
 {
 	string temp = wordVector.at(pos1);
-
 	wordVector.at(pos1) = wordVector.at(pos2);
 	wordVector.at(pos2) = temp;
 }
 
+
 /**
-.Uses bubble sort to sort and vector of strings, alphabetically. It is entended for strings with only upper case letters.
+Uses bubble sort to sort and vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
 @param wordVector: reference to a vector
 */
-
-
 void sortVector(vector<string>& wordVector)
 {
 	//Initialize variables
@@ -260,7 +249,7 @@ void sortVector(vector<string>& wordVector)
 	do
 	{
 		didSwap = false;
-		//if a string is "bigger" than the following one, swap them and change the bool value
+		//If a string is "bigger" than the following one, swap them and change the bool value
 		for (unsigned int i = 1; i < vectorSize; i++)
 		{
 			if (wordVector.at(i - 1) > wordVector.at(i))
@@ -269,15 +258,14 @@ void sortVector(vector<string>& wordVector)
 				didSwap = true;
 			}
 		}
-	} while (didSwap); //stops when no swaps occured
-
+	} while (didSwap); //Stops when no swaps occured
 }
 
-/**
-.Removes duplicate words from a sorted vector
-@param wordVector: sorted array of upper case strinfs
-*/
 
+/**
+Removes duplicate words from a sorted vector
+@param wordVector: sorted array of upper case strings
+*/
 void removeDuplicates(vector<string>& wordVector)
 {
 	for (unsigned int j = 0; j < (wordVector.size() - 1); j++)
@@ -287,13 +275,15 @@ void removeDuplicates(vector<string>& wordVector)
 			wordVector.erase(wordVector.begin() + j);
 			j--;
 		}
-
 	}
 }
 
+
+//==============================================================================================================================================
+
+
 int main()
 {
-
 	ifstream inputFile;
 	ofstream outputFile;
 
@@ -310,6 +300,14 @@ int main()
 	cout << "Dictionary file ? ";
 	cin >> inputFile_Name;
 
+	//Checks if file extension is correct
+	while (inputFile_Name.substr(inputFile_Name.find_last_of('.'), 4) != ".txt")
+	{
+		cout << "Invalid file extension." << endl;
+		cout << "Dictionary file ? ";
+		cin >> inputFile_Name;
+	}
+
 	//Opens the given file
 	inputFile.open(inputFile_Name);
 
@@ -324,12 +322,21 @@ int main()
 	cout << "Word list file ? ";
 	cin >> outputFile_Name;
 
+	//Checks if file extension is correct
+	while (outputFile_Name.substr(outputFile_Name.find_last_of('.'), 4) != ".txt")
+	{
+		cout << "Invalid file extension." << endl;
+		cout << "Word list file ? ";
+		cin >> outputFile_Name;
+	}
+
 	cout << endl;
 
 	cout << "Extracting simple words from file " << inputFile_Name << "," << endl;
 	cout << "beginning with letter ..." << endl;
 
 	readFile(inputFile, wordVector);
+	inputFile.close(); 
 
 	cout << "Number of simple words = " << wordVector.size() << endl;
 
@@ -341,7 +348,9 @@ int main()
 
 	cout << "Number of non duplicate words = " << wordVector.size() << endl;
 
+	cout << "Saving words into file " << outputFile_Name << " ..." << endl;
 	writeFile(outputFile, wordVector, outputFile_Name);
+
 	cout << "End of processing." << endl;
 
 
