@@ -11,9 +11,14 @@ Adds a word to the word vector
 @param wordVector: vector of strings
 @param word: word to be added to the word vector
 */
-void addToVector(vector<string>& wordVector, string word)
+void addToVector(vector<string>& wordVector, string word, int& wordCount)
 {
 	wordVector.push_back(word);
+	
+	//Increment wordCount and write a dot if wordCount is divisible by 100 *****WARNING now is 5 for testing purposes******
+	wordCount++;
+	if (wordCount % 5 == 0)
+		cout << ".";
 }
 
 
@@ -132,7 +137,7 @@ For headlines with multiple words: decomposes in single words/expressions and ad
 @param wordVector: vector of words
 @param line: string to be evaluated
 */
-void addHeadline(vector<string>& wordVector, string line)
+void addHeadline(vector<string>& wordVector, string line, int& wordCount)
 {
 	string currentWord = "";
 
@@ -143,7 +148,7 @@ void addHeadline(vector<string>& wordVector, string line)
 			removeSpacesFromEdges(currentWord);
 
 			if (isSimpleWord(currentWord))
-				addToVector(wordVector, currentWord);
+				addToVector(wordVector, currentWord, wordCount);
 
 			currentWord = "";
 		}
@@ -154,7 +159,7 @@ void addHeadline(vector<string>& wordVector, string line)
 	removeSpacesFromEdges(currentWord);
 
 	if (isSimpleWord(currentWord))
-		addToVector(wordVector, currentWord);
+		addToVector(wordVector, currentWord, wordCount);
 }
 
 
@@ -163,21 +168,29 @@ Processes individual lines by checking if they're headlines and if so adding val
 @param line: line to be processed
 @param wordVector: vector that stores all the valid words
 */
-void processLine(string line, vector<string>& wordVector)
+void processLine(string line, vector<string>& wordVector, char& currentInitial, int& wordCount)
 {
 	if (isHeadline(line))
 	{
 		removeSpacesFromEdges(line);
 
+		if (line.at(0) != currentInitial) //If new initial is different than current initial, resets counter and changes currentInitial, displaying new initial on screen
+		{
+			currentInitial = line.at(0);
+			wordCount = 0;
+
+			cout << endl << currentInitial << endl;
+		}
+
 		if (isSimpleWord(line))
 		{
-			addToVector(wordVector, line);
+			addToVector(wordVector, line, wordCount);
 		}
 		else
 		{
 			if (hasMultipleWords(line))
 			{
-				addHeadline(wordVector, line);
+				addHeadline(wordVector, line, wordCount);
 			}
 		}
 	}
@@ -192,13 +205,16 @@ void readFile(ifstream& iFile, vector<string>& wordVector)
 {
 	string inputLine;
 
+	char currentInitial = '\0';
+	int wordCount = 0;
+
 	getline(iFile, inputLine);
-	processLine(inputLine, wordVector);
+	processLine(inputLine, wordVector, currentInitial, wordCount);
 
 	while (!iFile.eof()) //Test for eof
 	{
 		getline(iFile, inputLine);
-		processLine(inputLine, wordVector);
+		processLine(inputLine, wordVector, currentInitial, wordCount);
 	}
 }
 
@@ -338,6 +354,7 @@ int main()
 	readFile(inputFile, wordVector);
 	inputFile.close(); 
 
+	cout << endl << endl;
 	cout << "Number of simple words = " << wordVector.size() << endl;
 
 	cout << "Sorting words ..." << endl;
