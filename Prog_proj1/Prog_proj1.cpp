@@ -251,7 +251,7 @@ void vectorSwap(vector<string>& wordVector, int pos1, int pos2)
 
 
 /**
-Uses bubble sort to sort and vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
+Uses bubble sort to sort a vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
 @param wordVector: reference to a vector
 */
 void sortVector(vector<string>& wordVector)
@@ -315,7 +315,7 @@ int main()
 	cin >> inputFile_Name;
 
 	//Checks if file extension is correct
-	while (inputFile_Name.substr(inputFile_Name.find_last_of('.'), 4) != ".txt")
+	while (inputFile_Name.size() > 3 && inputFile_Name.substr(inputFile_Name.size() - 4, 4) != ".txt")
 	{
 		cout << "Invalid file extension." << endl;
 		cout << "Dictionary file ? ";
