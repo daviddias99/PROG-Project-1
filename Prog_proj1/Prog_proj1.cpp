@@ -17,7 +17,7 @@ void addToVector(vector<string>& wordVector, string word)
 }
 
 /**
-Modifies string to the same string without blank spaces
+Modifies string to the same string without blank spaces.
 @param s: passed by reference, string whose spaces we want to delete
 */
 void removeSpacesFromEdges(string &s)
