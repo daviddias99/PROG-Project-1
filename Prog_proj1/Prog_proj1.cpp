@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -23,18 +24,20 @@ Modifies string by removing whitespaces from the beginning and end
 */
 void removeSpacesFromEdges(string &s)
 {
-	while (isspace(s.at(0))) //Remove spaces at the beginning of the string
+	if (s != "")
 	{
-		s.erase(0, 1);
-		if (s == "")
-			break;
+		while (isspace((unsigned char)s.at(0))) //Remove spaces at the beginning of the string
+		{
+			s.erase(0, 1);
+			if (s == "")
+				break;
+		}
 	}
-		
 	
 	if (s != "") 
 	{
 		int j = s.length() - 1;
-		while (isspace(s.at(j))) //Remove spaces at the end of the string
+		while (isspace((unsigned char)s.at(j))) //Remove spaces at the end of the string
 		{
 			s.erase(j, 1);
 			j--;
@@ -62,7 +65,16 @@ bool isHeadline(string line)
 	{
 		char currentChar = line.at(i);
 
-		if (isalpha(currentChar))
+		int charAscii = (unsigned int)currentChar;
+
+		if (!((charAscii <= 255) && (charAscii >= 0)))
+		{
+			headline = false;
+			break;
+		}
+
+
+		if (isalpha((unsigned char)currentChar))
 		{
 			if (currentChar != toupper(currentChar)) //Check if char is alphabetic lower case
 			{
@@ -175,9 +187,9 @@ void processLine(string line, vector<string>& wordVector, char& currentInitial, 
 			cout << endl << currentInitial << endl;
 		}
 
-		//Increments headline counter and displays a dot on the screen if the counter is divisible by 100 ***WARNING its being divided by 5 for testing purposes***
+		//Increments headline counter and displays a dot on the screen if the counter is divisible by 100 
 		headlineCount++;
-		if (headlineCount % 5 == 0)
+		if (headlineCount % 100 == 0)
 			cout << '.';
 
 		if (isSimpleWord(line))
@@ -254,7 +266,7 @@ void vectorSwap(vector<string>& wordVector, int pos1, int pos2)
 Uses bubble sort to sort a vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
 @param wordVector: reference to a vector
 */
-void sortVector(vector<string>& wordVector)
+void sortVectorBubble(vector<string>& wordVector)
 {
 	//Initialize variables
 	unsigned int vectorSize = wordVector.size();
@@ -268,7 +280,8 @@ void sortVector(vector<string>& wordVector)
 		{
 			if (wordVector.at(i - 1) > wordVector.at(i))
 			{
-				vectorSwap(wordVector, i, i - 1);
+				//vectorSwap(wordVector, i, i - 1);
+				iter_swap(wordVector.begin() + i, wordVector.begin() + i - 1);
 				didSwap = true;
 			}
 		}
@@ -292,6 +305,44 @@ void removeDuplicates(vector<string>& wordVector)
 	}
 }
 
+/**
+Uses quicksort to sort a vector of strings, alphabetically. **It is entended for strings with only upper case letters.** 
+WARNING: THIS ALGORITHM USES A RECURVISE ALGORITHMS
+@param wordVector: reference to a vector
+@param began : index of the first position
+@param end : index of the last position
+*/
+void sortVectorQuick(vector<string>& values, int began, int end)
+{
+	int i, j;
+	string pivot, aux;
+	i = began;
+	j = end;
+	pivot = values[(began + end) / 2];
+	while (i <= j)
+	{
+		while (values.at(i) < pivot && i < end)
+		{
+			i++;
+		}
+		while (values.at(j) > pivot && j > began)
+		{
+			j--;
+		}
+		if (i <= j)
+		{
+			aux = values.at(i);
+			values.at(i) = values.at(j);
+			values.at(j) = aux;
+			i++;
+			j--;
+		}
+	}
+	if (j > began)
+		sortVectorQuick(values, began, j);
+	if (i < end)
+		sortVectorQuick(values, i, end);
+}
 
 //==============================================================================================================================================
 
@@ -356,10 +407,21 @@ int main()
 	cout << "Number of simple words = " << wordVector.size() << endl;
 
 	cout << "Sorting words ..." << endl;
-	sortVector(wordVector);
+	/*
+	.Sorting using a bubblesort method
+	sortVectorBubble(wordVector);
+	.Sorting using the function of the std library
+	sort(wordVector.begin(), wordVector.end());
+	.Sorting using a quicksort method
+	*/
+	
+	sortVectorQuick(wordVector, 0, wordVector.size() - 1);
 
 	cout << "Removing duplicate words ..." << endl;
-	removeDuplicates(wordVector);
+	//Using a "self-made" function:removeDuplicates(wordVector);
+
+	//Using an std funcion
+	wordVector.erase(unique(wordVector.begin(), wordVector.end()), wordVector.end());
 
 	cout << "Number of non duplicate words = " << wordVector.size() << endl;
 
