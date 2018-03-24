@@ -176,7 +176,7 @@ Processes individual lines by checking if they're headlines and if so adding val
 @param line: line to be processed
 @param wordVector: vector that stores all the valid words
 */
-void processLine(string line, vector<string>& wordVector, char& currentInitial, int& headlineCount)
+void processLine(string line, vector<string>& wordVector, char& currentInitial, int& headlineCount, int& dispCharCount)
 {
 	if (isHeadline(line))
 	{
@@ -184,8 +184,13 @@ void processLine(string line, vector<string>& wordVector, char& currentInitial, 
 
 		if (line.at(0) != currentInitial && isalpha(line.at(0))) //If new initial is different than current initial changes currentInitial, displaying new initial on screen
 		{
-			currentInitial = line.at(0);
-			cout << endl << currentInitial << endl;
+			dispCharCount++;
+			if (dispCharCount> 3)
+			{
+				currentInitial = line.at(0);
+				cout << endl << currentInitial << endl;
+				dispCharCount = 0;
+			}
 		}
 
 		//Increments headline counter and displays a dot on the screen if the counter is divisible by 100 
@@ -218,14 +223,15 @@ void readFile(ifstream& iFile, vector<string>& wordVector)
 
 	char currentInitial = '\0';
 	int headlineCount = 0;
+	int dispCharCount = 0;
 
 	getline(iFile, inputLine);
-	processLine(inputLine, wordVector, currentInitial, headlineCount);
+	processLine(inputLine, wordVector, currentInitial, headlineCount,dispCharCount);
 
 	while (!iFile.eof()) //Test for eof
 	{
 		getline(iFile, inputLine);
-		processLine(inputLine, wordVector, currentInitial, headlineCount);
+		processLine(inputLine, wordVector, currentInitial, headlineCount,dispCharCount);
 	}
 }
 
