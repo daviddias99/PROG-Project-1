@@ -7,6 +7,7 @@
 using namespace std;
 
 
+
 /**
 Adds a word to the word vector
 @param wordVector: vector of strings
