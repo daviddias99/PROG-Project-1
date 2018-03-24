@@ -169,7 +169,7 @@ void processLine(string line, vector<string>& wordVector, char& currentInitial, 
 	{
 		removeSpacesFromEdges(line);
 
-		if (line.at(0) != currentInitial) //If new initial is different than current initial changes currentInitial, displaying new initial on screen
+		if (line.at(0) != currentInitial && isalpha(line.at(0))) //If new initial is different than current initial changes currentInitial, displaying new initial on screen
 		{
 			currentInitial = line.at(0);
 			cout << endl << currentInitial << endl;
