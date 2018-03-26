@@ -2,6 +2,7 @@
 #include<fstream>
 #include<vector>
 #include<string>
+#include<ctime>
 
 using namespace std;
 
@@ -116,6 +117,93 @@ void wordExists(vector<string> wordVector)
 
 }
 
+/**
+.Chooses a random integer between two numbers (Don't forget to seed the RNG in the main function)
+@param n1: lower bound
+@param n2: upper bound
+@return: random between n1 and n2 (n1 and n2 included)
+*/
+
+int randomBetween(int n1, int n2)
+{
+	return n1 + rand() % (n2 - n1 + 1);
+}
+
+/**
+.Receives a string and returns a scrambled version of that string
+@param inputString
+@return newString: scrambled version of inputString
+*/
+
+string scrambleString(string inputString)
+{
+	string newString = inputString;
+
+	for (size_t i = 0; i < newString.size(); i++)
+	{
+		int randomPos = randomBetween(0, inputString.size() - 1);
+		newString.at(i) = inputString.at(randomPos);
+		inputString.erase(randomPos, 1);
+	}
+	return newString;
+}
+
+/*
+.Outputs to the console a scrambled string, each letter (except the last one) is followed by a space. WARNING: MIGHT NEED NAME CHANGE
+@param inputString
+*/
+
+void showScrambled(string inputString)
+{
+	for (size_t i = 0; i < inputString.size(); i++)
+	{
+		cout << inputString.at(i);
+		if (i != inputString.size() - 1)
+		{
+			cout << " ";
+		}
+	}
+}
+
+/**
+.Function that does the game "Guess Word", it chooses a random string from a given vector, outputs the scrambled word and gives the user three tries
+to guess the original word.
+@param wordVector
+*/
+
+void guessWord(vector<string>&  wordVector)
+{
+	string secretWord = wordVector.at(randomBetween(0, (int)wordVector.size() - 1));
+	string scrambledWord = scrambleString(secretWord);
+	string userInput;
+
+	cout << "== GUESS WORD ==" << endl << endl;
+	showScrambled(scrambledWord);
+	cout << endl;
+
+	for (int i = 1; i <= 3; i++)
+	{
+		cout << "Answer #" << i << ": ";
+		cin >> userInput;
+
+		if (allCaps(userInput) == secretWord)
+		{
+			cout << "Correct answer! " << endl;
+			break;
+		}
+
+		cout << "Wrong answer... (" << 3 - i << " tries left)" << endl;
+
+		if (i == 3)
+		{
+			cout << "The correct answer was \" " << secretWord << " \" " << endl;
+		}
+
+	}
+
+	cout << "TEMPORARY: END OF FUNCTION" << endl;
+
+}
 
 //======================================================================================================================================
 
@@ -124,6 +212,7 @@ int main()
 {
 	ifstream wordFile;
 	vector<string> wordVector;
+	srand(time(NULL));
 
 	
 	//Open word file
@@ -138,7 +227,9 @@ int main()
 
 
 	//Does the word belong on the list? **first function**
-	wordExists(wordVector);
+	
+	//wordExists(wordVector);
+	guessWord(wordVector);
 	
 
 
