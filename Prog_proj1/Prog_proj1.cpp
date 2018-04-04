@@ -370,7 +370,7 @@ int main()
 
 	//Gets the name of the input file
 	cout << "Dictionary file ? ";
-	cin >> inputFile_Name;
+	getline(cin, inputFile_Name, '\n');
 
 	//Checks if file extension is correct
 	while (inputFile_Name.size() > 3 && inputFile_Name.substr(inputFile_Name.size() - 4, 4) != ".txt")
@@ -422,7 +422,11 @@ int main()
 	.Sorting using a quicksort method
 	*/
 	
-	sortVectorQuick(wordVector, 0, wordVector.size() - 1);
+	if (!(wordVector.size() == 0))
+	{
+		sortVectorQuick(wordVector, 0, wordVector.size() - 1);
+	}
+
 
 	cout << "Removing duplicate words ..." << endl;
 	//Using a "self-made" function:removeDuplicates(wordVector);
