@@ -207,14 +207,192 @@ void guessWord(vector<string>&  wordVector)
 
 //======================================================================================================================================
 
+/*
+.Rounds a given number to a chosen number of decimal places
+@param x
+@param n: number of decimal places
+@return rounded version of x
+*/
 
+double roundNum(double x, int n)
+{
+	return floor(x*pow(10, n) + 0.5) / pow(10, n);
+}
+
+/*
+.Resizes a vector eliminating a "tail" of a vector that only contains null chars.
+@param vectorInput: a given vector of chars
+*/
+
+void normalizeVector(vector<char>& vectorInput)
+{
+	for (int i = 0; i < vectorInput.size(); i++)
+	{
+		if (vectorInput.at(i) == '\0')
+		{
+			vectorInput.erase(vectorInput.begin() + i, vectorInput.end());
+		}
+	}
+
+}
+
+/*
+.Gives the value of the sum of the values of the elements of a vector
+@param dataVector: vector of integers
+@return result: sum of the elements
+*/
+
+int vectorSum(vector<int> dataVector)
+{
+	int result = 0;
+
+	for (size_t i = 0; i < dataVector.size(); i++)
+	{
+		result += dataVector.at(i);
+	}
+
+	return result;
+}
+
+/*
+.Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
+@param word
+@param charCount: vector that keeps that of the quantities of a given char
+*/
+
+void updateCharCount(string word, vector<int>& charCount)
+{
+	for (size_t j = 0; j < word.size(); j++)
+	{
+		char currentChar = word.at(j);
+		int charAscii = (int)currentChar;
+		int alphaPositon = charAscii % 65; //corresponding position of a char in the charCount vector WARNING: CHANGE TO 65
+
+		charCount.at(alphaPositon)++;
+	}
+}
+
+/*
+.Goes through each word in the word vector and updates the charCount vector
+@param wordVector
+@param charCount
+*/
+
+void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
+{
+	for (size_t i = 0; i < wordVector.size(); i++)
+	{
+		string currentWord = wordVector.at(i);
+		updateCharCount(currentWord, charCount);
+	}
+}
+
+/*
+.Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
+each char must appear in that sample in order do emulate the relative frequency of the original set.
+@param charCount: vector containing the absolute values of the number of occurences of each char
+@param charFreq: vector containting the  number of occurences of each char in a set of SAMPLE_SIZE letters (THIS FUNCTION "BUILDS" THIS VECTOR)
+@param SAMPLE_SIZE
+
+*/
+
+
+void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZE)
+{
+
+	int sum = vectorSum(charCount);
+
+
+	for (size_t i = 0; i < charFreq.size(); i++)
+	{
+		charFreq.at(i) =  floor((double)charCount.at(i) / sum * SAMPLE_SIZE);
+	}
+
+}
+
+/*
+.Builds a sample of chars using the quantities that come in charFreq vector
+@param sampleVector
+@param charFreq
+*/
+
+void buildSample(vector<char>& sampleVector, vector<int>& charFreq)
+{
+	int globalCount = 0;
+
+	for (size_t j = 0; j < charFreq.size(); j++)
+	{
+		for (size_t i = 0; i < charFreq.at(j); i++)
+		{
+			sampleVector.at(globalCount) = (char)(j + 65);
+			globalCount++;
+		}
+	}
+
+	normalizeVector(sampleVector);
+}
+
+
+/*
+.Choosesm randomly,  a set of N chars from a given vector and outputs them to the screen
+@param sampleVector
+@param N: number of letters
+*/
+
+void outputNLetters(vector<char>& sampleVector, int N)
+{
+	for (int i = 1; i <= N; i++)
+	{
+		int randNum = randomBetween(0, sampleVector.size() - 1);
+		cout << sampleVector.at(randNum) << " ";
+	}
+
+}
+
+
+void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<int>& charFreq, vector<char>& sampleVector, const int sampleSize)
+{
+	int letterQuant;
+	string userAnswer;
+	charCountBuild(wordVector, charCount);
+	charFreqBuild(charCount, charFreq, sampleSize);
+	buildSample(sampleVector, charFreq);
+
+	cout << "How many letters do you want the word to contain? ";
+	cin >> letterQuant;
+
+	cout << "Input a words that contains the following letters: " << endl;
+	outputNLetters(sampleVector, letterQuant);
+	cout << endl;
+	cin >> userAnswer;
+	
+	if (searchWord(wordVector, allCaps(userAnswer)))
+	{
+		cout << "The entered word exists in the file..." << endl;
+	}
+	else
+		cout << "The entered word does NOT exist in the file..." << endl;
+
+}
+
+
+
+
+//======================================================================================================================================
 int main()
 {
 	ifstream wordFile;
 	vector<string> wordVector;
+
+	//Used in wordSetFunction
+	const int SAMPLE_SIZE = 1350; 
+	vector<char> sampleVector(SAMPLE_SIZE);
+	vector<int> charCount(26);
+	vector<int> charFreq(26);
+
+	//Seed for random number generation
 	srand(time(NULL));
 
-	
 	//Open word file
 	while (!getWordFile(wordFile)); 
 
@@ -229,8 +407,11 @@ int main()
 	//Does the word belong on the list? **first function**
 	
 	//wordExists(wordVector);
-	guessWord(wordVector);
+	//guessWord(wordVector);
+
+	wordSetFunction(wordVector, charCount, charFreq, sampleVector, SAMPLE_SIZE);
 	
+
 
 
 
