@@ -57,7 +57,7 @@ void readFile(ifstream& file, vector<string>& wordVector)
 
 
 /**
-Receives a string and returns it with all caps 
+Receives a string and returns it with all caps
 @param word: word we want to make all caps
 @return value: same word, all caps
 */
@@ -75,7 +75,7 @@ string allCaps(string word)
 /**
 Uses binary search to see if a user entered word matches a word on the vector
 @param wordVector: vector of words
-@param word: user entered word 
+@param word: user entered word
 @return value: true if the word matches a word on the vector, false if the word doesn't belong on the vector
 */
 bool searchWord(vector<string> wordVector, string word)
@@ -95,7 +95,7 @@ bool searchWord(vector<string> wordVector, string word)
 		else if (word < wordVector.at(mid))
 			upper = mid - 1;
 	}
-	
+
 	return false;
 }
 
@@ -305,7 +305,7 @@ void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZ
 
 	for (size_t i = 0; i < charFreq.size(); i++)
 	{
-		charFreq.at(i) =  floor((double)charCount.at(i) / sum * SAMPLE_SIZE);
+		charFreq.at(i) = floor((double)charCount.at(i) / sum * SAMPLE_SIZE);
 	}
 
 }
@@ -365,7 +365,7 @@ void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<
 	outputNLetters(sampleVector, letterQuant);
 	cout << endl;
 	cin >> userAnswer;
-	
+
 	if (searchWord(wordVector, allCaps(userAnswer)))
 	{
 		cout << "The entered word exists in the file..." << endl;
@@ -376,16 +376,136 @@ void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<
 }
 
 
+//======================================FUNCAO_3========================================================================================
+
+/*
+Normalizes a word making all its chars alphabetically ordered and upper case
+@param word: word to normalize
+@return value: string corresponding to the normalized word
+*/
+string normalizeWord(string word)
+{
+	string normWord = allCaps(word);
+
+	unsigned int wordSize = word.size();
+	bool didSwap;
+
+	do
+	{
+		didSwap = false;
+
+		for (unsigned int i = 1; i < wordSize; i++)
+		{
+			if (normWord.at(i - 1) > normWord.at(i))
+			{
+				iter_swap(normWord.begin() + i, normWord.begin() + i - 1);
+				didSwap = true;
+			}
+		}
+	} while (didSwap);
+
+	return normWord;
+}
+
+/*
+Asks user for a set of letters
+@return value: vector with the chars that the user wrote
+*/
+vector<char> userLetters()
+{
+	char currentChar;
+	int setSize;
+
+	cout << "How many letters do you wish to input: "; cin >> setSize;
+	cout << "Enter a set of letters: ";
+
+	vector<char> charVector;
+
+	if (setSize > 0)
+	{
+		for (int i = 0; i < setSize; i++)
+		{
+			cin >> currentChar;
+			charVector.push_back(currentChar);
+		}
+	}
+
+	return charVector;
+}
+
+/*
+Searchs the wordVector for the valid words using the set of letters given by the user
+@param wordVector: vector containing the dictionary
+@param letterString: string containing the set of letters
+@return value: vector of strings containing all the valid words
+*/
+vector<string> getValidWords(vector<string> wordVector, string letterString)
+{
+	vector<string> validWords;
+	size_t numDictionaryWords = wordVector.size();
+	int setSize = letterString.size();
+
+	for (size_t i = 0; i < numDictionaryWords; i++)
+	{
+		if (setSize == wordVector.at(i).size())
+			if (letterString == normalizeWord(wordVector.at(i)))
+				validWords.push_back(wordVector.at(i));
+	}
+
+	return validWords;
+}
+
+/*
+Displays all the elements from a vector, followed by a newline
+@param vec: vector we want to display
+*/
+void showVector(vector<string> vec)
+{
+	cout << vec.at(0);
+
+	for (size_t i = 1; i < vec.size(); i++)
+	{
+		cout << "; " <<vec.at(i);
+	}
+
+	cout << endl;
+}
+
+/*
+Ask the user a set of N letters and show all the words present in the dictionary that can be built using the set of the given letters or any subset of them
+@param wordVector: dictionary vector
+*/
+void funcao3(vector<string> wordVector)
+{
+	vector<char> charVector = userLetters();
+
+	string letterString = normalizeWord(string(charVector.begin(), charVector.end())); // Turns the vector of chars into a stl::string and normalizes it
+
+	vector<string> validWords = getValidWords(wordVector, letterString);
+
+
+	if (validWords.size() > 0)
+	{
+		cout << "All the valid words using that set of letters are:" << endl;
+		showVector(validWords);
+		cout << endl;
+	}
+	else
+		cout << "No possible words using the given set of letters." << endl << endl;
+	
+}
+
 
 
 //======================================================================================================================================
 int main()
 {
+
 	ifstream wordFile;
 	vector<string> wordVector;
 
 	//Used in wordSetFunction
-	const int SAMPLE_SIZE = 1350; 
+	const int SAMPLE_SIZE = 1350;
 	vector<char> sampleVector(SAMPLE_SIZE);
 	vector<int> charCount(26);
 	vector<int> charFreq(26);
@@ -394,7 +514,7 @@ int main()
 	srand(time(NULL));
 
 	//Open word file
-	while (!getWordFile(wordFile)); 
+	while (!getWordFile(wordFile));
 
 
 	//Save words into vector and close word file
@@ -404,15 +524,17 @@ int main()
 	cout << endl;
 
 
-	//Does the word belong on the list? **first function**
-	
-	//wordExists(wordVector);
-	//guessWord(wordVector);
+	/*
+	wordExists(wordVector);
+
+	guessWord(wordVector);
 
 	wordSetFunction(wordVector, charCount, charFreq, sampleVector, SAMPLE_SIZE);
-	
+	*/
 
 
+
+	funcao3(wordVector);
 
 
 	return 0;
