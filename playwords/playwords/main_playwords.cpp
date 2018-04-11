@@ -3,8 +3,67 @@
 #include<vector>
 #include<string>
 #include<ctime>
+#include <ios>
+#include <limits>
 
 using namespace std;
+
+void menuHub(int startMode = 0)
+{
+	int userInput;
+
+	if (startMode == 0)
+	{
+		cout << "=================================================" << endl;
+		cout << "====                PLAYWORDS                ====" << endl;
+		cout << "=================================================" << endl;
+	}
+
+	cout << endl;
+	cout << "Welcome to playwords, please choose the game you want to play: " << endl << endl;
+	cout << "1- Find Word " << endl;
+	cout << "2- Scrambled Word" << endl;
+	cout << "3- Word building" << endl;
+	cout << "4- Valid Words" << endl;
+	cout << "5- WildCards" << endl;
+	cout << "6- Exit" << endl;
+
+	while (1)
+	{
+
+	cout << "* ";
+	cin >> userInput;
+
+	if (cin.fail())
+	{
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Unreconized input please try again..." << endl;
+	}
+	else
+		break;
+	}
+
+
+	switch (userInput) 
+	{
+	case 1: 
+		func1(); break;
+	case 2: 
+		func2(); break;
+	case 3:
+		func3(); break;
+	case 4:
+		func4(); break;
+	case 5:
+		func5(); break;
+	default:
+		break;
+	}
+
+}
+
+
 
 
 /**
