@@ -15,7 +15,8 @@ Adds a word to the word vector
 */
 void addToVector(vector<string>& wordVector, string word)
 {
-	wordVector.push_back(word);
+	if (word != "")
+		wordVector.push_back(word);
 }
 
 
@@ -34,8 +35,8 @@ void removeSpacesFromEdges(string &s)
 				break;
 		}
 	}
-	
-	if (s != "") 
+
+	if (s != "")
 	{
 		int j = s.length() - 1;
 		while (isspace((unsigned char)s.at(j))) //Remove spaces at the end of the string
@@ -107,7 +108,7 @@ bool isSimpleWord(string line)
 
 	for (int i = 0; i < line.size(); i++)
 	{
-		if (!isalpha(line.at(i))) 
+		if (!isalpha(line.at(i)))
 		{
 			simpleWord = false;
 			break; //breaks if a non alphabetic char is found and returns false
@@ -131,7 +132,7 @@ bool hasMultipleWords(string line)
 	{
 		if (line.at(i) == ';')
 		{
-			hasSemicolon = true; 
+			hasSemicolon = true;
 			break; //Ends loop if a semicolon is found, returning true
 		}
 	}
@@ -185,7 +186,7 @@ void processLine(string line, vector<string>& wordVector, char& currentInitial, 
 		if (line.at(0) != currentInitial && isalpha(line.at(0))) //If new initial is different than current initial changes currentInitial, displaying new initial on screen
 		{
 			dispCharCount++;
-			if (dispCharCount> 3)
+			if (dispCharCount > 3)
 			{
 				currentInitial = line.at(0);
 				cout << endl << currentInitial << endl;
@@ -226,12 +227,12 @@ void readFile(ifstream& iFile, vector<string>& wordVector)
 	int dispCharCount = 0;
 
 	getline(iFile, inputLine);
-	processLine(inputLine, wordVector, currentInitial, headlineCount,dispCharCount);
+	processLine(inputLine, wordVector, currentInitial, headlineCount, dispCharCount);
 
 	while (!iFile.eof()) //Test for eof
 	{
 		getline(iFile, inputLine);
-		processLine(inputLine, wordVector, currentInitial, headlineCount,dispCharCount);
+		processLine(inputLine, wordVector, currentInitial, headlineCount, dispCharCount);
 	}
 }
 
@@ -270,7 +271,24 @@ void vectorSwap(vector<string>& wordVector, int pos1, int pos2)
 
 
 /**
-Uses bubble sort to sort a vector of strings, alphabetically. **It is entended for strings with only upper case letters.**
+Removes duplicate words from a sorted vector
+@param wordVector: sorted array of upper case strings
+*/
+void removeDuplicates(vector<string>& wordVector)
+{
+	for (unsigned int j = 0; j < (wordVector.size() - 1); j++)
+	{
+		if (wordVector.at(j) == wordVector.at(j + 1))
+		{
+			wordVector.erase(wordVector.begin() + j);
+			j--;
+		}
+	}
+}
+
+
+/**
+Uses bubble sort to sort a vector of strings, alphabetically **It is entended for strings with only upper case letters.**
 @param wordVector: reference to a vector
 */
 void sortVectorBubble(vector<string>& wordVector)
@@ -297,24 +315,7 @@ void sortVectorBubble(vector<string>& wordVector)
 
 
 /**
-Removes duplicate words from a sorted vector
-@param wordVector: sorted array of upper case strings
-*/
-void removeDuplicates(vector<string>& wordVector)
-{
-	for (unsigned int j = 0; j < (wordVector.size() - 1); j++)
-	{
-		if (wordVector.at(j) == wordVector.at(j + 1))
-		{
-			wordVector.erase(wordVector.begin() + j);
-			j--;
-		}
-	}
-}
-
-/**
-Uses quicksort to sort a vector of strings, alphabetically. **It is entended for strings with only upper case letters.** 
-WARNING: THIS ALGORITHM USES A RECURVISE ALGORITHMS
+Uses quicksort to sort a vector of strings, alphabetically **It is entended for strings with only upper case letters.**
 @param wordVector: reference to a vector
 @param began : index of the first position
 @param end : index of the last position
@@ -350,6 +351,7 @@ void sortVectorQuick(vector<string>& values, int began, int end)
 	if (i < end)
 		sortVectorQuick(values, i, end);
 }
+
 
 //==============================================================================================================================================
 
@@ -408,7 +410,7 @@ int main()
 	cout << "beginning with letter ..." << endl;
 
 	readFile(inputFile, wordVector);
-	inputFile.close(); 
+	inputFile.close();
 
 	cout << endl << endl;
 	cout << "Number of simple words = " << wordVector.size() << endl;
@@ -419,9 +421,9 @@ int main()
 	sortVectorBubble(wordVector);
 	.Sorting using the function of the std library
 	sort(wordVector.begin(), wordVector.end());
-	.Sorting using a quicksort method
 	*/
 	
+	//Sorting using a quicksort method
 	if (!(wordVector.size() == 0))
 	{
 		sortVectorQuick(wordVector, 0, wordVector.size() - 1);
@@ -434,10 +436,13 @@ int main()
 	//Using an std funcion
 	wordVector.erase(unique(wordVector.begin(), wordVector.end()), wordVector.end());
 
+
 	cout << "Number of non duplicate words = " << wordVector.size() << endl;
 
+	//Writing words into a text file
 	cout << "Saving words into file " << outputFile_Name << " ..." << endl;
 	writeFile(outputFile, wordVector, outputFile_Name);
+
 
 	cout << "End of processing." << endl;
 

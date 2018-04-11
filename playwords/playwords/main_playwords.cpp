@@ -123,10 +123,10 @@ void func1(vector<string> wordVector)
 
 
 /**
-.Chooses a random integer between two numbers (Don't forget to seed the RNG in the main function)
+Chooses a random integer between two numbers (Don't forget to seed the RNG in the main function)
 @param n1: lower bound
 @param n2: upper bound
-@return: random between n1 and n2 (n1 and n2 included)
+@return value: random between n1 and n2 (n1 and n2 included)
 */
 int randomBetween(int n1, int n2)
 {
@@ -135,9 +135,9 @@ int randomBetween(int n1, int n2)
 
 
 /**
-.Receives a string and returns a scrambled version of that string
+Receives a string and returns a scrambled version of that string
 @param inputString
-@return newString: scrambled version of inputString
+@return value: scrambled version of inputString
 */
 string scrambleString(string inputString)
 {
@@ -153,8 +153,8 @@ string scrambleString(string inputString)
 }
 
 
-/*
-.Outputs to the console a scrambled string, each letter (except the last one) is followed by a space. WARNING: MIGHT NEED NAME CHANGE
+/**
+Outputs to the console a scrambled string, each letter (except the last one) is followed by a space. WARNING: MIGHT NEED NAME CHANGE
 @param inputString
 */
 void showScrambled(string inputString)
@@ -172,7 +172,7 @@ void showScrambled(string inputString)
 
 /**
 GUESS WORD
-.Function that does the game "Guess Word", it chooses a random string from a given vector, outputs the scrambled word and gives the user three tries
+Function that does the game "Guess Word", it chooses a random string from a given vector, outputs the scrambled word and gives the user three tries
 to guess the original word.
 @param wordVector
 */
@@ -209,10 +209,10 @@ void func2(vector<string>&  wordVector)
 }
 
 
-
 //======================================FUNCAO_3========================================================================================
 
-/*
+
+/**
 Normalizes a word making all its chars alphabetically ordered and upper case
 @param word: word to normalize
 @return value: string corresponding to the normalized word
@@ -242,7 +242,7 @@ string normalizeWord(string word)
 }
 
 
-/*
+/**
 Asks user for a set of letters
 @return value: string with all the valid alphabetic chars given by the user
 */
@@ -283,7 +283,7 @@ string userLetters()
 }
 
 
-/*
+/**
 Searchs the wordVector for the valid words using the set of letters given by the user
 @param wordVector: vector containing the dictionary
 @param letterString: string containing the set of letters
@@ -306,7 +306,7 @@ vector<string> getValidWords(vector<string> wordVector, string letterString)
 }
 
 
-/*
+/**
 Displays all the elements from a vector, followed by a newline
 @param vec: vector we want to display
 */
@@ -321,7 +321,7 @@ void showVector(vector<string> vec)
 }
 
 
-/*
+/**
 WORD BUILDING
 Ask the user a set of N letters and show all the words present in the dictionary that can be built using the set of the given letters or any subset of them
 @param wordVector: dictionary vector
@@ -347,8 +347,9 @@ void func3(vector<string> wordVector)
 
 //==========================================FUNCAO_4================================================================================
 
-/*
-.Rounds a given number to a chosen number of decimal places
+
+/**
+Rounds a given number to a chosen number of decimal places
 @param x
 @param n: number of decimal places
 @return rounded version of x
@@ -358,8 +359,9 @@ double roundNum(double x, int n)
 	return floor(x*pow(10, n) + 0.5) / pow(10, n);
 }
 
-/*
-.Resizes a vector eliminating a "tail" of a vector that only contains null chars.
+
+/**
+Resizes a vector eliminating a "tail" of a vector that only contains null chars.
 @param vectorInput: a given vector of chars
 */
 void normalizeVector(vector<char>& vectorInput)
@@ -373,8 +375,9 @@ void normalizeVector(vector<char>& vectorInput)
 	}
 }
 
-/*
-.Gives the value of the sum of the values of the elements of a vector
+
+/**
+Gives the value of the sum of the values of the elements of a vector
 @param dataVector: vector of integers
 @return result: sum of the elements
 */
@@ -390,8 +393,9 @@ int vectorSum(vector<int> dataVector)
 	return result;
 }
 
-/*
-.Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
+
+/**
+Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
 @param word
 @param charCount: vector that keeps that of the quantities of a given char
 */
@@ -407,8 +411,9 @@ void updateCharCount(string word, vector<int>& charCount)
 	}
 }
 
-/*
-.Goes through each word in the word vector and updates the charCount vector
+
+/**
+Goes through each word in the word vector and updates the charCount vector
 @param wordVector
 @param charCount
 */
@@ -421,8 +426,9 @@ void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
 	}
 }
 
-/*
-.Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
+
+/**
+Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
 each char must appear in that sample in order do emulate the relative frequency of the original set.
 @param charCount: vector containing the absolute values of the number of occurences of each char
 @param charFreq: vector containting the  number of occurences of each char in a set of SAMPLE_SIZE letters (THIS FUNCTION "BUILDS" THIS VECTOR)
@@ -441,8 +447,9 @@ void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZ
 
 }
 
-/*
-.Builds a sample of chars using the quantities that come in charFreq vector
+
+/**
+Builds a sample of chars using the quantities that come in charFreq vector
 @param sampleVector
 @param charFreq
 */
@@ -463,8 +470,8 @@ void buildSample(vector<char>& sampleVector, vector<int>& charFreq)
 }
 
 
-/*
-.Chooses randomly,  a set of N chars from a given vector and outputs them to the screen
+/**
+Chooses randomly,  a set of N chars from a given vector and outputs them to the screen
 @param sampleVector
 @param N: number of letters
 */
@@ -501,10 +508,11 @@ void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<
 	}
 	else
 		cout << "The entered word does NOT exist in the file..." << endl;
-
 }
 
+
 //==========================================FUNCAO_5====================================================================================
+
 
 //////////////////////////////////////////////////////////////////////////
 // WildcardMatch
@@ -567,7 +575,7 @@ bool wildcardMatch(const char *str, const char *strWild)
 }
 
 
-/*
+/**
 Checks if a string is a valid wildcard
 @param str: string we want to test
 @return value: true if the string is a valid wildcard
@@ -589,7 +597,7 @@ bool isWildCard(string str)
 }
 
 
-/*
+/**
 Reads a stl string corresponding to a wildcard from the user
 @param MAX_STR_SIZE: max size for the string so that it doesn't give an error when converting to c string
 @return value: wildcard stl string
@@ -615,7 +623,7 @@ string readWildCard(const unsigned int MAX_STR_SIZE)
 }
 
 
-/*
+/**
 WILDCARDS 
 Read a string containing one or more wildcard characters ('*' or '?') and show all the words in the dictionary that match the given string
 @param wordVector: dictionary vector
@@ -650,7 +658,8 @@ void func5(vector<string> wordVector)
 
 //======================================================================================================================================
 
-/*
+
+/**
 Game menu: calls each game according to user input
 @param wordVector: vector containing dictionary words
 @param startMode: if menu is called with startMode = true, shows the PLAYWORDS headline
@@ -721,6 +730,7 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 		break;
 	}
 }
+
 
 //======================================================================================================================================
 
