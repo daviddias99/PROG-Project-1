@@ -12,6 +12,7 @@ void menuHub(int startMode = 0)
 {
 	int userInput;
 
+
 	if (startMode == 0)
 	{
 		cout << "=================================================" << endl;
@@ -160,10 +161,11 @@ bool searchWord(vector<string> wordVector, string word)
 
 
 /**
+WORD EXISTS
 Asks the user for a word and checks if it belongs on the list
 @param wordvector: vector containing all words
 */
-void wordExists(vector<string> wordVector)
+void func1(vector<string> wordVector)
 {
 	string inputWord;
 
@@ -173,8 +175,8 @@ void wordExists(vector<string> wordVector)
 		cout << "The word " << inputWord << " belongs on the list." << endl;
 	else
 		cout << "The word " << inputWord << " doesn't belong on the list." << endl;
-
 }
+
 
 /**
 .Chooses a random integer between two numbers (Don't forget to seed the RNG in the main function)
@@ -182,7 +184,6 @@ void wordExists(vector<string> wordVector)
 @param n2: upper bound
 @return: random between n1 and n2 (n1 and n2 included)
 */
-
 int randomBetween(int n1, int n2)
 {
 	return n1 + rand() % (n2 - n1 + 1);
@@ -193,7 +194,6 @@ int randomBetween(int n1, int n2)
 @param inputString
 @return newString: scrambled version of inputString
 */
-
 string scrambleString(string inputString)
 {
 	string newString = inputString;
@@ -211,7 +211,6 @@ string scrambleString(string inputString)
 .Outputs to the console a scrambled string, each letter (except the last one) is followed by a space. WARNING: MIGHT NEED NAME CHANGE
 @param inputString
 */
-
 void showScrambled(string inputString)
 {
 	for (size_t i = 0; i < inputString.size(); i++)
@@ -225,12 +224,12 @@ void showScrambled(string inputString)
 }
 
 /**
+GUESS WORD
 .Function that does the game "Guess Word", it chooses a random string from a given vector, outputs the scrambled word and gives the user three tries
 to guess the original word.
 @param wordVector
 */
-
-void guessWord(vector<string>&  wordVector)
+void func2(vector<string>&  wordVector)
 {
 	string secretWord = wordVector.at(randomBetween(0, (int)wordVector.size() - 1));
 	string scrambledWord = scrambleString(secretWord);
@@ -264,7 +263,7 @@ void guessWord(vector<string>&  wordVector)
 
 }
 
-//======================================================================================================================================
+//==========================================FUNCAO_4================================================================================
 
 /*
 .Rounds a given number to a chosen number of decimal places
@@ -272,7 +271,6 @@ void guessWord(vector<string>&  wordVector)
 @param n: number of decimal places
 @return rounded version of x
 */
-
 double roundNum(double x, int n)
 {
 	return floor(x*pow(10, n) + 0.5) / pow(10, n);
@@ -282,7 +280,6 @@ double roundNum(double x, int n)
 .Resizes a vector eliminating a "tail" of a vector that only contains null chars.
 @param vectorInput: a given vector of chars
 */
-
 void normalizeVector(vector<char>& vectorInput)
 {
 	for (int i = 0; i < vectorInput.size(); i++)
@@ -292,7 +289,6 @@ void normalizeVector(vector<char>& vectorInput)
 			vectorInput.erase(vectorInput.begin() + i, vectorInput.end());
 		}
 	}
-
 }
 
 /*
@@ -300,7 +296,6 @@ void normalizeVector(vector<char>& vectorInput)
 @param dataVector: vector of integers
 @return result: sum of the elements
 */
-
 int vectorSum(vector<int> dataVector)
 {
 	int result = 0;
@@ -318,7 +313,6 @@ int vectorSum(vector<int> dataVector)
 @param word
 @param charCount: vector that keeps that of the quantities of a given char
 */
-
 void updateCharCount(string word, vector<int>& charCount)
 {
 	for (size_t j = 0; j < word.size(); j++)
@@ -336,7 +330,6 @@ void updateCharCount(string word, vector<int>& charCount)
 @param wordVector
 @param charCount
 */
-
 void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
 {
 	for (size_t i = 0; i < wordVector.size(); i++)
@@ -352,10 +345,7 @@ each char must appear in that sample in order do emulate the relative frequency 
 @param charCount: vector containing the absolute values of the number of occurences of each char
 @param charFreq: vector containting the  number of occurences of each char in a set of SAMPLE_SIZE letters (THIS FUNCTION "BUILDS" THIS VECTOR)
 @param SAMPLE_SIZE
-
 */
-
-
 void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZE)
 {
 
@@ -374,7 +364,6 @@ void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZ
 @param sampleVector
 @param charFreq
 */
-
 void buildSample(vector<char>& sampleVector, vector<int>& charFreq)
 {
 	int globalCount = 0;
@@ -397,7 +386,6 @@ void buildSample(vector<char>& sampleVector, vector<int>& charFreq)
 @param sampleVector
 @param N: number of letters
 */
-
 void outputNLetters(vector<char>& sampleVector, int N)
 {
 	for (int i = 1; i <= N; i++)
@@ -431,8 +419,8 @@ void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<
 	}
 	else
 		cout << "The entered word does NOT exist in the file..." << endl;
-
 }
+
 
 
 //======================================FUNCAO_3========================================================================================
@@ -468,28 +456,42 @@ string normalizeWord(string word)
 
 /*
 Asks user for a set of letters
-@return value: vector with the chars that the user wrote
+@return value: string with all the valid alphabetic chars given by the user
 */
-vector<char> userLetters()
+string userLetters()
 {
-	char currentChar;
-	int setSize;
+	string userStr;
+	bool validStr;
 
-	cout << "How many letters do you wish to input: "; cin >> setSize;
-	cout << "Enter a set of letters: ";
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	vector<char> charVector;
-
-	if (setSize > 0)
+	do
 	{
-		for (int i = 0; i < setSize; i++)
-		{
-			cin >> currentChar;
-			charVector.push_back(currentChar);
-		}
-	}
+		validStr = true;
 
-	return charVector;
+		cout << "Enter a set of letters: ";
+		getline(cin, userStr);
+
+		for (size_t i = 0; i < userStr.size(); i++)
+		{
+			if (!isalpha(userStr.at(i)))
+			{
+				if (isspace(userStr.at(i)))
+				{
+					userStr.erase(i, 1);
+					i--;
+				}
+				else
+				{
+					validStr = false;
+					cout << "Invalid set of letters(only alphabetic chars and spaces allowed)." << endl << endl;
+					break;
+				}
+			}
+		}
+	} while (!validStr);
+
+	return userStr;
 }
 
 /*
@@ -524,24 +526,24 @@ void showVector(vector<string> vec)
 
 	for (size_t i = 1; i < vec.size(); i++)
 	{
-		cout << "; " <<vec.at(i);
+		cout << "; " << vec.at(i);
 	}
 
 	cout << endl;
 }
 
 /*
+WORD BUILDING
 Ask the user a set of N letters and show all the words present in the dictionary that can be built using the set of the given letters or any subset of them
 @param wordVector: dictionary vector
 */
-void funcao3(vector<string> wordVector)
+void func3(vector<string> wordVector)
 {
-	vector<char> charVector = userLetters();
-
-	string letterString = normalizeWord(string(charVector.begin(), charVector.end())); // Turns the vector of chars into a stl::string and normalizes it
+	string letterString = normalizeWord(userLetters());
 
 	vector<string> validWords = getValidWords(wordVector, letterString);
 
+	cout << endl;
 
 	if (validWords.size() > 0)
 	{
@@ -551,12 +553,12 @@ void funcao3(vector<string> wordVector)
 	}
 	else
 		cout << "No possible words using the given set of letters." << endl << endl;
-	
 }
 
 
-
 //======================================================================================================================================
+
+
 int main()
 {
 
@@ -593,7 +595,7 @@ int main()
 
 
 
-	funcao3(wordVector);
+	func3(wordVector);
 
 
 	return 0;
