@@ -3,67 +3,10 @@
 #include<vector>
 #include<string>
 #include<ctime>
-#include <ios>
-#include <limits>
+#include<ios>
+#include<limits>
 
 using namespace std;
-
-void menuHub(int startMode = 0)
-{
-	int userInput;
-
-
-	if (startMode == 0)
-	{
-		cout << "=================================================" << endl;
-		cout << "====                PLAYWORDS                ====" << endl;
-		cout << "=================================================" << endl;
-	}
-
-	cout << endl;
-	cout << "Welcome to playwords, please choose the game you want to play: " << endl << endl;
-	cout << "1- Find Word " << endl;
-	cout << "2- Scrambled Word" << endl;
-	cout << "3- Word building" << endl;
-	cout << "4- Valid Words" << endl;
-	cout << "5- WildCards" << endl;
-	cout << "6- Exit" << endl;
-
-	while (1)
-	{
-
-	cout << "* ";
-	cin >> userInput;
-
-	if (cin.fail())
-	{
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-		cout << "Unreconized input please try again..." << endl;
-	}
-	else
-		break;
-	}
-
-
-	switch (userInput) 
-	{
-	case 1: 
-		func1(); break;
-	case 2: 
-		func2(); break;
-	case 3:
-		func3(); break;
-	case 4:
-		func4(); break;
-	case 5:
-		func5(); break;
-	default:
-		break;
-	}
-
-}
-
 
 
 
@@ -189,6 +132,7 @@ int randomBetween(int n1, int n2)
 	return n1 + rand() % (n2 - n1 + 1);
 }
 
+
 /**
 .Receives a string and returns a scrambled version of that string
 @param inputString
@@ -207,6 +151,7 @@ string scrambleString(string inputString)
 	return newString;
 }
 
+
 /*
 .Outputs to the console a scrambled string, each letter (except the last one) is followed by a space. WARNING: MIGHT NEED NAME CHANGE
 @param inputString
@@ -223,6 +168,7 @@ void showScrambled(string inputString)
 	}
 }
 
+
 /**
 GUESS WORD
 .Function that does the game "Guess Word", it chooses a random string from a given vector, outputs the scrambled word and gives the user three tries
@@ -237,6 +183,7 @@ void func2(vector<string>&  wordVector)
 
 	cout << "== GUESS WORD ==" << endl << endl;
 	showScrambled(scrambledWord);
+	cout << secretWord;
 	cout << endl;
 
 	for (int i = 1; i <= 3; i++)
@@ -258,10 +205,146 @@ void func2(vector<string>&  wordVector)
 		}
 
 	}
-
-	cout << "TEMPORARY: END OF FUNCTION" << endl;
-
 }
+
+
+
+//======================================FUNCAO_3========================================================================================
+
+/*
+Normalizes a word making all its chars alphabetically ordered and upper case
+@param word: word to normalize
+@return value: string corresponding to the normalized word
+*/
+string normalizeWord(string word)
+{
+	string normWord = allCaps(word);
+
+	unsigned int wordSize = word.size();
+	bool didSwap;
+
+	do
+	{
+		didSwap = false;
+
+		for (unsigned int i = 1; i < wordSize; i++)
+		{
+			if (normWord.at(i - 1) > normWord.at(i))
+			{
+				iter_swap(normWord.begin() + i, normWord.begin() + i - 1);
+				didSwap = true;
+			}
+		}
+	} while (didSwap);
+
+	return normWord;
+}
+
+
+/*
+Asks user for a set of letters
+@return value: string with all the valid alphabetic chars given by the user
+*/
+string userLetters()
+{
+	string userStr;
+	bool validStr;
+
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+	do
+	{
+		validStr = true;
+
+		cout << "Enter a set of letters: ";
+		getline(cin, userStr);
+
+		for (size_t i = 0; i < userStr.size(); i++)
+		{
+			if (!isalpha(userStr.at(i)))
+			{
+				if (isspace(userStr.at(i)))
+				{
+					userStr.erase(i, 1);
+					i--;
+				}
+				else
+				{
+					validStr = false;
+					cout << "Invalid set of letters(only alphabetic chars and spaces allowed)." << endl << endl;
+					break;
+				}
+			}
+		}
+	} while (!validStr);
+
+	return userStr;
+}
+
+
+/*
+Searchs the wordVector for the valid words using the set of letters given by the user
+@param wordVector: vector containing the dictionary
+@param letterString: string containing the set of letters
+@return value: vector of strings containing all the valid words
+*/
+vector<string> getValidWords(vector<string> wordVector, string letterString)
+{
+	vector<string> validWords;
+	size_t numDictionaryWords = wordVector.size();
+	int setSize = letterString.size();
+
+	for (size_t i = 0; i < numDictionaryWords; i++)
+	{
+		if (setSize == wordVector.at(i).size())
+			if (letterString == normalizeWord(wordVector.at(i)))
+				validWords.push_back(wordVector.at(i));
+	}
+
+	return validWords;
+}
+
+
+/*
+Displays all the elements from a vector, followed by a newline
+@param vec: vector we want to display
+*/
+void showVector(vector<string> vec)
+{
+	cout << vec.at(0);
+
+	for (size_t i = 1; i < vec.size(); i++)
+	{
+		cout << "; " << vec.at(i);
+	}
+
+	cout << endl;
+}
+
+
+/*
+WORD BUILDING
+Ask the user a set of N letters and show all the words present in the dictionary that can be built using the set of the given letters or any subset of them
+@param wordVector: dictionary vector
+*/
+void func3(vector<string> wordVector)
+{
+	string letterString = normalizeWord(userLetters());
+
+	vector<string> validWords = getValidWords(wordVector, letterString);
+
+	cout << endl;
+
+	if (validWords.size() > 0)
+	{
+		cout << "All the valid words using that set of letters are:" << endl;
+		showVector(validWords);
+		cout << endl;
+	}
+	else
+		cout << "No possible words using the given set of letters." << endl << endl;
+}
+
 
 //==========================================FUNCAO_4================================================================================
 
@@ -423,145 +506,81 @@ void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<
 
 
 
-//======================================FUNCAO_3========================================================================================
+//======================================================================================================================================
 
 /*
-Normalizes a word making all its chars alphabetically ordered and upper case
-@param word: word to normalize
-@return value: string corresponding to the normalized word
+Game menu: calls each game according to user input
+@param wordVector: vector containing dictionary words
+@param startMode: if menu is called with startMode = true, shows the PLAYWORDS headline
 */
-string normalizeWord(string word)
+void menuHub(vector<string> wordVector, bool startMode = false)
 {
-	string normWord = allCaps(word);
+	int userInput;
 
-	unsigned int wordSize = word.size();
-	bool didSwap;
-
-	do
+	if (startMode)
 	{
-		didSwap = false;
-
-		for (unsigned int i = 1; i < wordSize; i++)
-		{
-			if (normWord.at(i - 1) > normWord.at(i))
-			{
-				iter_swap(normWord.begin() + i, normWord.begin() + i - 1);
-				didSwap = true;
-			}
-		}
-	} while (didSwap);
-
-	return normWord;
-}
-
-/*
-Asks user for a set of letters
-@return value: string with all the valid alphabetic chars given by the user
-*/
-string userLetters()
-{
-	string userStr;
-	bool validStr;
-
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-	do
-	{
-		validStr = true;
-
-		cout << "Enter a set of letters: ";
-		getline(cin, userStr);
-
-		for (size_t i = 0; i < userStr.size(); i++)
-		{
-			if (!isalpha(userStr.at(i)))
-			{
-				if (isspace(userStr.at(i)))
-				{
-					userStr.erase(i, 1);
-					i--;
-				}
-				else
-				{
-					validStr = false;
-					cout << "Invalid set of letters(only alphabetic chars and spaces allowed)." << endl << endl;
-					break;
-				}
-			}
-		}
-	} while (!validStr);
-
-	return userStr;
-}
-
-/*
-Searchs the wordVector for the valid words using the set of letters given by the user
-@param wordVector: vector containing the dictionary
-@param letterString: string containing the set of letters
-@return value: vector of strings containing all the valid words
-*/
-vector<string> getValidWords(vector<string> wordVector, string letterString)
-{
-	vector<string> validWords;
-	size_t numDictionaryWords = wordVector.size();
-	int setSize = letterString.size();
-
-	for (size_t i = 0; i < numDictionaryWords; i++)
-	{
-		if (setSize == wordVector.at(i).size())
-			if (letterString == normalizeWord(wordVector.at(i)))
-				validWords.push_back(wordVector.at(i));
+		cout << "=================================================" << endl;
+		cout << "====               PLAYWORDS                 ====" << endl;
+		cout << "=================================================" << endl;
 	}
 
-	return validWords;
-}
+	cout << endl << endl;
+	cout << "Welcome to playwords, please choose the game you want to play: " << endl << endl;
+	cout << "1 - Find Word " << endl;
+	cout << "2 - Scrambled Word" << endl;
+	cout << "3 - Word Building" << endl;
+	cout << "4 - Valid Words" << endl;
+	cout << "5 - WildCards" << endl;
+	cout << "6 - Exit" << endl;
 
-/*
-Displays all the elements from a vector, followed by a newline
-@param vec: vector we want to display
-*/
-void showVector(vector<string> vec)
-{
-	cout << vec.at(0);
-
-	for (size_t i = 1; i < vec.size(); i++)
+	while (true)
 	{
-		cout << "; " << vec.at(i);
+
+		cout << "* ";
+		cin >> userInput;
+
+		if (cin.fail() || userInput > 6 || userInput < 1 )
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << "Invalid input. Please try again..." << endl;
+		}
+		else
+			break;
 	}
 
-	cout << endl;
-}
 
-/*
-WORD BUILDING
-Ask the user a set of N letters and show all the words present in the dictionary that can be built using the set of the given letters or any subset of them
-@param wordVector: dictionary vector
-*/
-void func3(vector<string> wordVector)
-{
-	string letterString = normalizeWord(userLetters());
-
-	vector<string> validWords = getValidWords(wordVector, letterString);
-
-	cout << endl;
-
-	if (validWords.size() > 0)
+	switch (userInput)
 	{
-		cout << "All the valid words using that set of letters are:" << endl;
-		showVector(validWords);
+	case 1:
 		cout << endl;
+		func1(wordVector);
+		menuHub(wordVector);
+		break;
+	case 2:
+		cout << endl;
+		func2(wordVector);
+		menuHub(wordVector);
+		break;
+	case 3:
+		cout << endl;
+		func3(wordVector);
+		menuHub(wordVector);
+		break;
+	case 4:
+		//func4(); break;
+	case 5:
+		//func5(); break;
+	default:
+		cout << "GOOD BYE!" << endl;
+		break;
 	}
-	else
-		cout << "No possible words using the given set of letters." << endl << endl;
 }
-
 
 //======================================================================================================================================
 
-
 int main()
 {
-
 	ifstream wordFile;
 	vector<string> wordVector;
 
@@ -584,19 +603,8 @@ int main()
 	wordFile.close();
 	cout << endl;
 
-
-	/*
-	wordExists(wordVector);
-
-	guessWord(wordVector);
-
-	wordSetFunction(wordVector, charCount, charFreq, sampleVector, SAMPLE_SIZE);
-	*/
-
-
-
-	func3(wordVector);
-
+	//Starts game with menu 
+	menuHub(wordVector, true);
 
 	return 0;
 }
