@@ -2,6 +2,7 @@
 #include<fstream>
 #include<vector>
 #include<string>
+#include<cstring>
 #include<ctime>
 #include<ios>
 #include<limits>
@@ -317,8 +318,6 @@ void showVector(vector<string> vec)
 	{
 		cout << "; " << vec.at(i);
 	}
-
-	cout << endl;
 }
 
 
@@ -342,7 +341,7 @@ void func3(vector<string> wordVector)
 		cout << endl;
 	}
 	else
-		cout << "No possible words using the given set of letters." << endl << endl;
+		cout << "No possible words using the given set of letters." << endl;
 }
 
 
@@ -465,7 +464,7 @@ void buildSample(vector<char>& sampleVector, vector<int>& charFreq)
 
 
 /*
-.Choosesm randomly,  a set of N chars from a given vector and outputs them to the screen
+.Chooses randomly,  a set of N chars from a given vector and outputs them to the screen
 @param sampleVector
 @param N: number of letters
 */
@@ -502,8 +501,151 @@ void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<
 	}
 	else
 		cout << "The entered word does NOT exist in the file..." << endl;
+
 }
 
+//==========================================FUNCAO_5====================================================================================
+
+//////////////////////////////////////////////////////////////////////////
+// WildcardMatch
+// str - Input string to match
+// strWild - Match mask that may contain wildcards like ? and *
+//
+// A ? sign matches any character, except an empty string.
+// A * sign matches any string inclusive an empty string.
+// Characters are compared caseless.
+//
+// ADAPTED FROM:
+// https://www.codeproject.com/Articles/188256/A-Simple-Wildcard-Matching-Function
+bool wildcardMatch(const char *str, const char *strWild)
+{
+	// We have a special case where string is empty ("") and the mask is "*".
+	// We need to handle this too. So we can't test on !*str here.
+	// The loop breaks when the match string is exhausted.
+	while (*strWild)
+	{
+		// Single wildcard character
+		if (*strWild == '?')
+		{
+			// Matches any character except empty string
+			if (!*str)
+				return false;
+			// OK next
+			++str;
+			++strWild;
+		}
+		else if (*strWild == '*')
+		{
+			// Need to do some tricks.
+			// 1. The wildcard * is ignored.
+			// So just an empty string matches. This is done by recursion.
+			// Because we eat one character from the match string,
+			// the recursion will stop.
+			if (wildcardMatch(str, strWild + 1))
+				// we have a match and the * replaces no other character
+				return true;
+			// 2. Chance we eat the next character and try it again,
+			// with a wildcard * match. This is done by recursion.
+			// Because we eat one character from the string,
+			// the recursion will stop.
+			if (*str && wildcardMatch(str + 1, strWild))
+				return true;
+			// Nothing worked with this wildcard.
+			return false;
+		}
+		else
+		{
+			// Standard compare of 2 chars. Note that *str might be 0 here,
+			// but then we never get a match on *strWild
+			// that has always a value while inside this loop.
+			if (toupper(*str++) != toupper(*strWild++))
+				return false;
+		}
+	}
+	// Have a match? Only if both are at the end...
+	return !*str && !*strWild;
+}
+
+
+/*
+Checks if a string is a valid wildcard
+@param str: string we want to test
+@return value: true if the string is a valid wildcard
+*/
+bool isWildCard(string str)
+{
+	bool isWild = true;
+
+	for (size_t i = 0; i < str.size(); i++)
+	{
+		if (!isalpha(str.at(i)) && str.at(i) != '?' && str.at(i) != '*')
+		{
+			isWild = false;
+			break;
+		}
+	}
+
+	return isWild;
+}
+
+
+/*
+Reads a stl string corresponding to a wildcard from the user
+@param MAX_STR_SIZE: max size for the string so that it doesn't give an error when converting to c string
+@return value: wildcard stl string
+*/
+string readWildCard(const unsigned int MAX_STR_SIZE)
+{
+	string wildCard;
+
+	cout << "Enter a wildcard: "; cin >> wildCard;
+
+	while (cin.fail() || !isWildCard(wildCard) || wildCard.size() > MAX_STR_SIZE)
+	{
+		if (cin.fail())
+		{
+			cin.clear(); 
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		}
+		cout << "Not a wildcard. Try again: ";
+		cin >> wildCard;
+	}
+
+	return wildCard;
+}
+
+
+/*
+WILDCARDS 
+Read a string containing one or more wildcard characters ('*' or '?') and show all the words in the dictionary that match the given string
+@param wordVector: dictionary vector
+*/
+void func5(vector<string> wordVector)
+{
+	const unsigned int MAX_STR_SIZE = 50;
+
+	vector<string> validWords;
+
+	string wildCard = readWildCard(MAX_STR_SIZE);
+
+	char cWildPointer[MAX_STR_SIZE + 1];
+	char cWordPointer[MAX_STR_SIZE + 1];
+
+	strcpy_s(cWildPointer, wildCard.c_str());
+
+	for (size_t i = 0; i < wordVector.size(); i++)
+	{
+		strcpy_s(cWordPointer, wordVector.at(i).c_str());
+
+		if (wildcardMatch(cWordPointer, cWildPointer))
+		{
+			validWords.push_back(wordVector.at(i));
+		}
+	}
+
+	cout << endl << "All the valid words are: " << endl;
+	showVector(validWords);
+}
 
 
 //======================================================================================================================================
@@ -519,18 +661,18 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 
 	if (startMode)
 	{
-		cout << "=================================================" << endl;
-		cout << "====               PLAYWORDS                 ====" << endl;
-		cout << "=================================================" << endl;
+		cout << "=============================================" << endl;
+		cout << "====             PLAYWORDS               ====" << endl;
+		cout << "=============================================" << endl;
 	}
 
 	cout << endl << endl;
-	cout << "Welcome to playwords, please choose the game you want to play: " << endl << endl;
+	cout << "Please choose the game you want to play: " << endl << endl;
 	cout << "1 - Find Word " << endl;
 	cout << "2 - Scrambled Word" << endl;
 	cout << "3 - Word Building" << endl;
 	cout << "4 - Valid Words" << endl;
-	cout << "5 - WildCards" << endl;
+	cout << "5 - Wildcards" << endl;
 	cout << "6 - Exit" << endl;
 
 	while (true)
@@ -570,7 +712,10 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 	case 4:
 		//func4(); break;
 	case 5:
-		//func5(); break;
+		cout << endl;
+		func5(wordVector);
+		menuHub(wordVector);
+		break;
 	default:
 		cout << "GOOD BYE!" << endl;
 		break;
@@ -578,6 +723,7 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 }
 
 //======================================================================================================================================
+
 
 int main()
 {
