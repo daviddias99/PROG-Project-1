@@ -379,7 +379,7 @@ int main()
 	{
 		cout << "Invalid file extension." << endl;
 		cout << "Dictionary file ? ";
-		cin >> inputFile_Name;
+		getline(cin, inputFile_Name, '\n');
 	}
 
 	//Opens the given file
@@ -394,14 +394,25 @@ int main()
 
 	//Store the output file's name
 	cout << "Word list file ? ";
-	cin >> outputFile_Name;
+	getline(cin, outputFile_Name, '\n');
+
+	if (cin.eof())
+	{
+		cerr << "ERROR: Invalid file name, exiting..." << endl;
+		exit(2);
+	}
 
 	//Checks if file extension is correct
 	while (outputFile_Name.substr(outputFile_Name.find_last_of('.'), 4) != ".txt")
 	{
 		cout << "Invalid file extension." << endl;
 		cout << "Word list file ? ";
-		cin >> outputFile_Name;
+		getline(cin, outputFile_Name, '\n');
+		if (cin.eof())
+		{
+			cerr << "ERROR: Invalid file name, exiting..." << endl;
+			exit(2);
+		}
 	}
 
 	cout << endl;
