@@ -135,47 +135,19 @@ void func1(vector<string>& wordVector)
 
 	cout << "Enter a word: "; cin >> inputWord;
 
-		cout << "Enter a word: "; cin >> inputWord;
+	cout << endl;
 
-		if (allCaps(inputWord).find_first_not_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ") != string::npos)
-		{
-			cout << "Invalid input, the word can only contain alphabetic characters...";
-		}
-		else if (searchWord(wordVector, allCaps(inputWord)))
-			cout << "The word \"" << allCaps(inputWord) << "\" belongs on the list." << endl;
-		else
-			cout << "The word \"" << allCaps(inputWord) << "\" doesn't belong on the list." << endl;
-
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-		cout << endl;
-		cout << "Do you want to play again? (Yes/No) ";
-		cin >> playAgainAns;
-
-		while (cin.eof() || cin.fail() || (toupper(playAgainAns.at(0)) != 'Y' && toupper(playAgainAns.at(0)) != 'N'))
-		{
-			if (cin.eof())
-			{
-				cin.clear();
-				playAgain = false;
-				break;
-			}
-
-			if (cin.fail())
-			{
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			}
+	if (allCaps(inputWord).find_first_not_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ") != string::npos)
+	{
+		cout << "Invalid input, the word can only contain alphabetic characters." << endl;
+	}
+	else if (searchWord(wordVector, allCaps(inputWord)))
+		cout << "The word \"" << allCaps(inputWord) << "\" belongs on the list." << endl;
+	else
+		cout << "The word \"" << allCaps(inputWord) << "\" doesn't belong on the list." << endl;
 
 
-			cout << "Invalid answer. Answer must be Yes or No. Try again: ";
-			cin >> playAgainAns;
-		}
-
-		if (playAgainAns != "")
-			playAgain = toupper(playAgainAns.at(0)) == 'Y' ? true : false;
-
-	} while (playAgain);
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 
@@ -254,6 +226,7 @@ void func2(vector<string>&  wordVector)
 	{
 		cout << "Answer #" << i << ": ";
 		cin >> userInput;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		if (allCaps(userInput) == secretWord)
 		{
@@ -261,10 +234,6 @@ void func2(vector<string>&  wordVector)
 			break;
 		}
 
-		cout << endl;
-		cout << "Do you want to play again? (Yes/No) ";
-		cin >> playAgainAns;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		cout << "Wrong answer... (" << NUM_TRIES - i << " tries left)" << endl;
 
 		if (i == NUM_TRIES)
@@ -272,7 +241,7 @@ void func2(vector<string>&  wordVector)
 			cout << endl;
 			cout << "The correct answer was \"" << secretWord << "\" " << endl;
 		}
-		cout << endl;
+
 	}
 }
 
@@ -381,11 +350,14 @@ Displays all the elements from a vector, followed by a newline
 */
 void showVector(vector<string> vec)
 {
-	cout << vec.at(0);
-
-	for (size_t i = 1; i < vec.size(); i++)
+	if (vec.size() > 0)
 	{
-		cout << "; " << vec.at(i);
+		cout << vec.at(0);
+
+		for (size_t i = 1; i < vec.size(); i++)
+		{
+			cout << "; " << vec.at(i);
+		}
 	}
 }
 
@@ -417,6 +389,7 @@ void func3(vector<string>& wordVector)
 	}
 	else
 		cout << "No possible words using the given set of letters." << endl;
+
 }
 
 
@@ -627,7 +600,6 @@ VALIDWORDS
 Randomly choose a set of N letters (it may contain repeated letters) and ask the user to build a valid word, then verify if the word belongs to the word list or not. The letters
 are extracted from a sample set that contains the same proportions of letters from the larger set
 @param wordVector
-
 */
 void func4(vector<string>& wordVector)
 {
@@ -667,13 +639,13 @@ void func4(vector<string>& wordVector)
 	{
 		if (searchWord(wordVector, allCaps(userAnswer)))
 		{
-			cout << "The entered word exists in the file..." << endl;
+			cout << "The word \"" << allCaps(userAnswer) << "\" exists in the file. " << endl;
 		}
 		else
-			cout << "The entered word does NOT exist in the file..." << endl;
+			cout << "The word \"" << allCaps(userAnswer) << "\" doesn't exist in the file. " << endl;
 	}
 	else
-		cout << "The word given must be built from a set or subset of the given letters " << endl;
+		cout << "The given word must be built from a set or subset of the given letters. " << endl;
 
 }
 
@@ -826,9 +798,13 @@ void func5(vector<string>& wordVector)
 		}
 	}
 
-	cout << endl << "All the valid words are: " << endl;
-	showVector(validWords);
-	cout << endl;
+	if (validWords.size() > 0)
+	{
+		cout << endl << "All the valid words are: " << endl;
+		showVector(validWords);
+	}
+	else
+		cout << "There are no valid words. " << endl;
 }
 
 
@@ -850,7 +826,7 @@ void repeatFunc(void function(vector<string>&), vector<string>& wordVector)
 		system("cls");
 		function(wordVector);
 
-		cout << endl;
+		cout << endl << endl;
 		cout << "Do you want to play again? (Yes/No) ";
 		cin >> playAgainAns;
 
