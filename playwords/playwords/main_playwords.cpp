@@ -856,7 +856,11 @@ int main()
 	srand((unsigned int)time(NULL));
 
 	//Open word file
-	getWordFile((wordFile);
+	if (!getWordFile((wordFile)))
+	{
+		cerr << "Exiting... " << endl;
+		return 1;
+	};
 
 
 	//Save words into vector and close word file
