@@ -9,7 +9,8 @@
 
 using namespace std;
 
-
+//Prototype of roundNum function
+double roundNum(double x, int n);
 
 /**
 Asks for the name of the file and trys to open the file
@@ -21,37 +22,37 @@ bool getWordFile(ifstream& file)
 	bool successfulyRead;
 	string fileName;
 
-	do 
+	do
 	{
-	//Gets the name of the input file
-	cout << "Word file ? ";
-	cin >> fileName;
-
-	//Checks if file extension is correct
-	while ((fileName.size() > 3 && fileName.substr(fileName.size() - 4, 4) != ".txt") || cin.eof())
-	{
-		if (cin.eof())
-		{
-			cin.clear();
-			return false;
-		}
-
-		cout << "Invalid file extension." << endl;
+		//Gets the name of the input file
 		cout << "Word file ? ";
 		cin >> fileName;
-	}
 
-	//Opens the given file
-	file.open(fileName);
+		//Checks if file extension is correct
+		while ((fileName.size() > 3 && fileName.substr(fileName.size() - 4, 4) != ".txt") || cin.eof())
+		{
+			if (cin.eof())
+			{
+				cin.clear();
+				return false;
+			}
 
-	//If the file is not open, give an error message and end the program
-	if (!file.is_open())
-	{
-		cout << "File not found." << endl;
-		successfulyRead = false;
-	}
-	else
-		successfulyRead = true;
+			cout << "Invalid file extension." << endl;
+			cout << "Word file ? ";
+			cin >> fileName;
+		}
+
+		//Opens the given file
+		file.open(fileName);
+
+		//If the file is not open, give an error message and end the program
+		if (!file.is_open())
+		{
+			cout << "File not found." << endl;
+			successfulyRead = false;
+		}
+		else
+			successfulyRead = true;
 	} while (!successfulyRead);
 
 	return successfulyRead;
@@ -96,9 +97,9 @@ Uses binary search to see if a user entered word matches a word on the vector
 */
 bool searchWord(vector<string> wordVector, string word)
 {
-	int lower = 0;
-	int upper = wordVector.size() - 1;
-	int mid;
+	size_t lower = 0;
+	size_t upper = wordVector.size() - 1;
+	size_t mid;
 
 	while (upper >= lower)
 	{
@@ -198,7 +199,7 @@ string scrambleString(string inputString)
 
 	for (size_t i = 0; i < newString.size(); i++)
 	{
-		int randomPos = randomBetween(0, inputString.size() - 1);
+		size_t randomPos = (size_t)randomBetween(0, (int)inputString.size() - 1);
 		newString.at(i) = inputString.at(randomPos);
 		inputString.erase(randomPos, 1);
 	}
@@ -317,7 +318,7 @@ string normalizeWord(string word)
 {
 	string normWord = allCaps(word);
 
-	unsigned int wordSize = word.size();
+	size_t wordSize = word.size();
 	bool didSwap;
 
 	do
@@ -389,7 +390,7 @@ vector<string> getValidWords(vector<string> wordVector, string letterString)
 {
 	vector<string> validWords;
 	size_t numDictionaryWords = wordVector.size();
-	int setSize = letterString.size();
+	size_t setSize = letterString.size();
 
 	for (size_t i = 0; i < numDictionaryWords; i++)
 	{
@@ -450,39 +451,49 @@ void func3(vector<string> wordVector)
 //==========================================FUNCAO_4================================================================================
 
 
-/**
-Rounds a given number to a chosen number of decimal places
+
+
+double vectorMin(vector<double>& vector)
+{
+	double min = vector.at(0);
+
+	for (size_t i = 1; i < vector.size(); i++)
+	{
+		if (vector.at(i) < min)
+		{
+			min = vector.at(i);
+		}
+	}
+
+	return min;
+
+}
+
+int calculateSample(vector<double>& vectorFreq)
+{
+	return (int)roundNum(2 / vectorMin(vectorFreq),0);
+}
+
+
+/*
+.Rounds a given number to a chosen number of decimal places
 @param x
 @param n: number of decimal places
 @return rounded version of x
 */
+
 double roundNum(double x, int n)
 {
 	return floor(x*pow(10, n) + 0.5) / pow(10, n);
 }
 
 
-/**
-Resizes a vector eliminating a "tail" of a vector that only contains null chars.
-@param vectorInput: a given vector of chars
-*/
-void normalizeVector(vector<char>& vectorInput)
-{
-	for (size_t i = 0; i < vectorInput.size(); i++)
-	{
-		if (vectorInput.at(i) == '\0')
-		{
-			vectorInput.erase(vectorInput.begin() + i, vectorInput.end());
-		}
-	}
-}
-
-
-/**
-Gives the value of the sum of the values of the elements of a vector
+/*
+.Gives the value of the sum of the values of the elements of a vector
 @param dataVector: vector of integers
 @return result: sum of the elements
 */
+
 int vectorSum(vector<int> dataVector)
 {
 	int result = 0;
@@ -495,12 +506,12 @@ int vectorSum(vector<int> dataVector)
 	return result;
 }
 
-
-/**
-Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
+/*
+.Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
 @param word
 @param charCount: vector that keeps that of the quantities of a given char
 */
+
 void updateCharCount(string word, vector<int>& charCount)
 {
 	for (size_t j = 0; j < word.size(); j++)
@@ -513,12 +524,12 @@ void updateCharCount(string word, vector<int>& charCount)
 	}
 }
 
-
-/**
-Goes through each word in the word vector and updates the charCount vector
+/*
+.Goes through each word in the word vector and updates the charCount vector
 @param wordVector
 @param charCount
 */
+
 void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
 {
 	for (size_t i = 0; i < wordVector.size(); i++)
@@ -528,15 +539,17 @@ void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
 	}
 }
 
-
-/**
-Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
+/*
+.Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
 each char must appear in that sample in order do emulate the relative frequency of the original set.
 @param charCount: vector containing the absolute values of the number of occurences of each char
 @param charFreq: vector containting the  number of occurences of each char in a set of SAMPLE_SIZE letters (THIS FUNCTION "BUILDS" THIS VECTOR)
 @param SAMPLE_SIZE
+
 */
-void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZE)
+
+
+void charFreqBuild(vector<int>& charCount, vector<double>& charFreq)
 {
 
 	int sum = vectorSum(charCount);
@@ -544,72 +557,151 @@ void charFreqBuild(vector<int>& charCount, vector<int>& charFreq, int SAMPLE_SIZ
 
 	for (size_t i = 0; i < charFreq.size(); i++)
 	{
-		charFreq.at(i) = floor((double)charCount.at(i) / sum * SAMPLE_SIZE);
+		charFreq.at(i) = (double)charCount.at(i) / sum;
+	}
+
+	int SAMPLE_SIZE = calculateSample(charFreq);
+
+	for (size_t i = 0; i < charFreq.size(); i++)
+	{
+		charFreq.at(i) = roundNum(charFreq.at(i) * SAMPLE_SIZE, 0);
 	}
 
 }
 
-
-/**
-Builds a sample of chars using the quantities that come in charFreq vector
+/*
+.Builds a sample of chars using the quantities that come in charFreq vector
 @param sampleVector
 @param charFreq
 */
-void buildSample(vector<char>& sampleVector, vector<int>& charFreq)
+
+void buildSample(vector<char>& sampleVector, vector<double>& charFreq)
 {
-	int globalCount = 0;
 
 	for (size_t j = 0; j < charFreq.size(); j++)
 	{
 		for (size_t i = 0; i < charFreq.at(j); i++)
 		{
-			sampleVector.at(globalCount) = (char)(j + 65);
-			globalCount++;
+			sampleVector.push_back((char)(j + 65));
 		}
 	}
 
-	normalizeVector(sampleVector);
 }
 
 
-/**
-Chooses randomly,  a set of N chars from a given vector and outputs them to the screen
+/*
+.Choosesm randomly,  a set of N chars from a given vector and outputs them to the screen
 @param sampleVector
 @param N: number of letters
+@result string containing the outputed letters
 */
-void outputNLetters(vector<char>& sampleVector, int N)
+
+string outputNLetters(vector<char>& sampleVector, int N)
 {
-	for (size_t i = 1; i <= N; i++)
+	string result = "";
+	for (int i = 1; i <= N; i++)
 	{
-		int randNum = randomBetween(0, sampleVector.size() - 1);
+		size_t randNum = randomBetween(0, (int)sampleVector.size() - 1);
 		cout << sampleVector.at(randNum) << " ";
+		result += sampleVector.at(randNum);
 	}
+
+	return result;
 }
 
+/*
+.Compares two strings, and returns true if the first is build from a set or subset of the letters of the second one, and false otherwise
+@param inputString
+@param mainString
+@result result
+*/
 
-void wordSetFunction(vector<string>& wordVector, vector<int>& charCount, vector<int>& charFreq, vector<char>& sampleVector, const int sampleSize)
+bool validateInput(string inputString, string mainString)
 {
+	inputString = allCaps(inputString);
+
+	bool result = true;
+
+	if (inputString.size() > mainString.size())
+	{
+		result = false;
+	}
+	else if (inputString.find_first_not_of(mainString) != string::npos)
+	{
+		result = false;
+	}
+	else
+		for (size_t i = 0; i < inputString.size(); i++)
+		{
+			if (mainString.find_first_of(inputString.at(i)) != string::npos)
+			{
+				mainString.erase(mainString.find_first_of(inputString.at(i)), 1);
+			}
+			else
+			{
+				result = false;
+				break;
+			}
+		}
+
+	return result;
+}
+
+/*
+.WORDBUILDING
+.Randomly choose a set of N letters (it may contain repeated letters) and ask the user to build a valid word, then verify if the word belongs to the word list or not. The letters 
+are extracted from a sample set that contains the same proportions of letters from the larger set
+@param wordVector
+
+*/
+void func4(vector<string>& wordVector)
+{
+	static bool firstTime = true;
+
+	static vector<char> sampleVector(0);
+	static vector<int> charCount(26);
+	static vector<double> charFreq(26);
+
 	int letterQuant;
 	string userAnswer;
-	charCountBuild(wordVector, charCount);
-	charFreqBuild(charCount, charFreq, sampleSize);
-	buildSample(sampleVector, charFreq);
+
+	if (firstTime)
+	{
+		charCountBuild(wordVector, charCount);
+		charFreqBuild(charCount, charFreq);
+		buildSample(sampleVector, charFreq);
+		firstTime = false;
+	}
+
+	cout << "=============================================" << endl;
+	cout << "====           WORD BUILDING             ====" << endl;
+	cout << "=============================================" << endl;
+	cout << endl << endl;
 
 	cout << "How many letters do you want the word to contain? ";
 	cin >> letterQuant;
 
 	cout << "Input a words that contains the following letters: " << endl;
-	outputNLetters(sampleVector, letterQuant);
+	string outputString = outputNLetters(sampleVector, letterQuant);
+
 	cout << endl;
 	cin >> userAnswer;
-
-	if (searchWord(wordVector, allCaps(userAnswer)))
+	if (validateInput(userAnswer, outputString))
 	{
-		cout << "The entered word exists in the file..." << endl;
+		if (searchWord(wordVector, allCaps(userAnswer)))
+		{
+			cout << "The entered word exists in the file..." << endl;
+		}
+		else
+			cout << "The entered word does NOT exist in the file..." << endl;
 	}
 	else
-		cout << "The entered word does NOT exist in the file..." << endl;
+		cout << "The word given must be built from a set or subset of the given letters " << endl;
+
+
 }
+
+
 
 
 //==========================================FUNCAO_5====================================================================================
@@ -729,10 +821,10 @@ WILDCARDS
 Read a string containing one or more wildcard characters ('*' or '?') and show all the words in the dictionary that match the given string
 @param wordVector: dictionary vector
 */
-void func5(vector<string> wordVector)
+void func5(vector<string>& wordVector)
 {
 	cout << "=============================================" << endl;
-	cout << "====              WILDCARDS              ====" << endl;
+	cout << "====             VALID WORDS             ====" << endl;
 	cout << "=============================================" << endl;
 	cout << endl << endl;
 
@@ -771,7 +863,7 @@ Game menu: calls each game according to user input
 @param wordVector: vector containing dictionary words
 @param startMode: if menu is called with startMode = true, shows the PLAYWORDS headline
 */
-void menuHub(vector<string> wordVector, bool startMode = false)
+void menuHub(vector<string>& wordVector, bool startMode = false)
 {
 	int userInput;
 
@@ -828,7 +920,9 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 		menuHub(wordVector);
 		break;
 	case 4:
-		//func4(); break;
+		func4(wordVector);
+		menuHub(wordVector);
+		break;
 	case 5:
 		cout << endl;
 		func5(wordVector);
@@ -846,11 +940,6 @@ int main()
 	ifstream wordFile;
 	vector<string> wordVector;
 
-	//Used in wordSetFunction
-	const int SAMPLE_SIZE = 1350;
-	vector<char> sampleVector(SAMPLE_SIZE);
-	vector<int> charCount(26);
-	vector<int> charFreq(26);
 
 	//Seed for random number generation
 	srand((unsigned int)time(NULL));
