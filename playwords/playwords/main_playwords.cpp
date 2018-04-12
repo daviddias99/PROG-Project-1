@@ -140,10 +140,16 @@ void func1(vector<string> wordVector)
 
 		cout << "Enter a word: "; cin >> inputWord;
 
-		if (searchWord(wordVector, allCaps(inputWord)))
+		if (allCaps(inputWord).find_first_not_of("ABCDEFGHIJKLMNOPQRSTUVWXYZ") != string::npos)
+		{
+			cout << "Invalid input, the word can only contain alphabetic characters...";
+		}
+		else if (searchWord(wordVector, allCaps(inputWord)))
 			cout << "The word \"" << allCaps(inputWord) << "\" belongs on the list." << endl;
 		else
 			cout << "The word \"" << allCaps(inputWord) << "\" doesn't belong on the list." << endl;
+
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		cout << endl;
 		cout << "Do you want to play again? (Yes/No) ";
@@ -257,6 +263,7 @@ void func2(vector<string>&  wordVector)
 		{
 			cout << "Answer #" << i << ": ";
 			cin >> userInput;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 			if (allCaps(userInput) == secretWord)
 			{
@@ -278,6 +285,7 @@ void func2(vector<string>&  wordVector)
 		cout << endl;
 		cout << "Do you want to play again? (Yes/No) ";
 		cin >> playAgainAns;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 		while (cin.eof() || cin.fail() || (toupper(playAgainAns.at(0)) != 'Y' && toupper(playAgainAns.at(0)) != 'N'))
 		{
@@ -297,6 +305,7 @@ void func2(vector<string>&  wordVector)
 
 			cout << "Invalid answer. Answer must be Yes or No. Try again: ";
 			cin >> playAgainAns;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 
 		if (playAgainAns != "")
@@ -683,12 +692,14 @@ void func4(vector<string>& wordVector)
 
 	cout << "How many letters do you want the word to contain? ";
 	cin >> letterQuant;
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	cout << "Input a words that contains the following letters: " << endl;
 	string outputString = outputNLetters(sampleVector, letterQuant);
 
 	cout << endl;
 	cin >> userAnswer;
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	if (validateInput(userAnswer, outputString))
 	{
 		if (searchWord(wordVector, allCaps(userAnswer)))
@@ -801,6 +812,7 @@ string readWildCard(const unsigned int MAX_STR_SIZE)
 	string wildCard;
 
 	cout << "Enter a wildcard: "; cin >> wildCard;
+	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
 	while (cin.fail() || !isWildCard(wildCard) || wildCard.size() > MAX_STR_SIZE)
 	{
@@ -811,6 +823,7 @@ string readWildCard(const unsigned int MAX_STR_SIZE)
 		}
 		cout << "Not a wildcard. Try again: ";
 		cin >> wildCard;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
 
 	return wildCard;
