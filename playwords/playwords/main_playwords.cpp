@@ -749,23 +749,25 @@ Reads a stl string corresponding to a wildcard from the user
 */
 string readWildCard(const unsigned int MAX_STR_SIZE)
 {
-	string wildCard;
+	string wildCard= "";
 
 	cout << "Enter a wildcard: "; cin >> wildCard;
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	while (cin.fail() || !isWildCard(wildCard) || wildCard.size() > MAX_STR_SIZE)
-	{
-		if (cin.fail())
+
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+
+		while (cin.fail() || !isWildCard(wildCard) || wildCard.size() > MAX_STR_SIZE)
 		{
-			cin.clear();
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			cout << "Not a wildcard. Try again: ";
+			cin >> wildCard;
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
-		cout << "Not a wildcard. Try again: ";
-		cin >> wildCard;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	}
-
 	return wildCard;
 }
 
@@ -792,25 +794,26 @@ void func5(vector<string>& wordVector)
 	char cWildPointer[MAX_STR_SIZE + 1];
 	char cWordPointer[MAX_STR_SIZE + 1];
 
-	strcpy_s(cWildPointer, wildCard.c_str());
+		strcpy_s(cWildPointer, wildCard.c_str());
 
-	for (size_t i = 0; i < wordVector.size(); i++)
-	{
-		strcpy_s(cWordPointer, wordVector.at(i).c_str());
-
-		if (wildcardMatch(cWordPointer, cWildPointer))
+		for (size_t i = 0; i < wordVector.size(); i++)
 		{
-			validWords.push_back(wordVector.at(i));
-		}
-	}
+			strcpy_s(cWordPointer, wordVector.at(i).c_str());
 
-	if (validWords.size() > 0)
-	{
-		cout << endl << "All the valid words are: " << endl;
-		showVector(validWords);
-	}
-	else
-		cout << "There are no valid words. " << endl;
+			if (wildcardMatch(cWordPointer, cWildPointer))
+			{
+				validWords.push_back(wordVector.at(i));
+			}
+		}
+
+		if (validWords.size() > 0)
+		{
+			cout << endl << "All the valid words are: " << endl;
+			showVector(validWords);
+		}
+		else
+			cout << "There are no valid words. " << endl;
+
 }
 
 
