@@ -450,12 +450,12 @@ void func3(vector<string> wordVector)
 
 //==========================================FUNCAO_4================================================================================
 
-/*
-.Calculates the minimum of a vector(of doubles)
-@param vector
-@result minimum
-*/
 
+/**
+Calculates the minimum of a vector(of doubles)
+@param vector
+@return value: minimum number present on the vector
+*/
 double vectorMin(vector<double>& vector)
 {
 	double min = vector.at(0);
@@ -469,41 +469,36 @@ double vectorMin(vector<double>& vector)
 	}
 
 	return min;
-
 }
 
-/*
-.Calculates the minimum sample size that allows the lowest appearing letter to have 2 instances in the sample.
+/**
+Calculates the minimum sample size that allows the lowest appearing letter to have 2 instances in the sample.
 @param vectorFreq: vector of the relative frequencies of the letters in the dictionary
-@result: sample size
-
+@return value: sample size
 */
-
 int calculateSample(vector<double>& vectorFreq)
 {
 	return (int)roundNum(2 / vectorMin(vectorFreq),0);
 }
 
 
-/*
-.Rounds a given number to a chosen number of decimal places
+/**
+Rounds a given number to a chosen number of decimal places
 @param x
 @param n: number of decimal places
-@return rounded version of x
+@return value: rounded version of x
 */
-
 double roundNum(double x, int n)
 {
 	return floor(x*pow(10, n) + 0.5) / pow(10, n);
 }
 
 
-/*
-.Gives the value of the sum of the values of the elements of a vector
+/**
+Gives the value of the sum of the values of the elements of a vector
 @param dataVector: vector of integers
-@return result: sum of the elements
+@return value: sum of the elements
 */
-
 int vectorSum(vector<int> dataVector)
 {
 	int result = 0;
@@ -516,12 +511,12 @@ int vectorSum(vector<int> dataVector)
 	return result;
 }
 
-/*
-.Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
+
+/**
+Goes through the chars of a given string and updates the count of those chars in the "charCount" vector
 @param word
 @param charCount: vector that keeps that of the quantities of a given char
 */
-
 void updateCharCount(string word, vector<int>& charCount)
 {
 	for (size_t j = 0; j < word.size(); j++)
@@ -534,12 +529,12 @@ void updateCharCount(string word, vector<int>& charCount)
 	}
 }
 
-/*
-.Goes through each word in the word vector and updates the charCount vector
+
+/**
+Goes through each word in the word vector and updates the charCount vector
 @param wordVector
 @param charCount
 */
-
 void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
 {
 	for (size_t i = 0; i < wordVector.size(); i++)
@@ -549,16 +544,14 @@ void charCountBuild(const vector<string>& wordVector, vector<int>& charCount)
 	}
 }
 
-/*
-.Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
+
+/**
+Takes the number of occurences of each letter and calculates it's relative frequency, then, given a sample Size, calculates the number of times
 each char must appear in that sample in order do emulate the relative frequency of the original set.
 @param charCount: vector containing the absolute values of the number of occurences of each char
 @param charFreq: vector containting the  number of occurences of each char in a set of SAMPLE_SIZE letters (THIS FUNCTION "BUILDS" THIS VECTOR)
 @param SAMPLE_SIZE
-
 */
-
-
 void charFreqBuild(vector<int>& charCount, vector<double>& charFreq)
 {
 
@@ -579,12 +572,12 @@ void charFreqBuild(vector<int>& charCount, vector<double>& charFreq)
 
 }
 
-/*
-.Builds a sample of chars using the quantities that come in charFreq vector
+
+/**
+Builds a sample of chars using the quantities that come in charFreq vector
 @param sampleVector
 @param charFreq
 */
-
 void buildSample(vector<char>& sampleVector, vector<double>& charFreq)
 {
 
@@ -599,13 +592,12 @@ void buildSample(vector<char>& sampleVector, vector<double>& charFreq)
 }
 
 
-/*
-.Choosesm randomly,  a set of N chars from a given vector and outputs them to the screen
+/**
+Chooses randomly,  a set of N chars from a given vector and outputs them to the screen
 @param sampleVector
 @param N: number of letters
-@result string containing the outputed letters
+@return value: string containing the outputed letters
 */
-
 string outputNLetters(vector<char>& sampleVector, int N)
 {
 	string result = "";
@@ -619,13 +611,13 @@ string outputNLetters(vector<char>& sampleVector, int N)
 	return result;
 }
 
-/*
-.Compares two strings, and returns true if the first is build from a set or subset of the letters of the second one, and false otherwise
+
+/**
+Compares two strings, and returns true if the first is build from a set or subset of the letters of the second one, and false otherwise
 @param inputString
 @param mainString
-@result result
+@result value: true if the first is build from a set or subset of the letters of the second one, and false otherwise
 */
-
 bool validateInput(string inputString, string mainString)
 {
 	inputString = allCaps(inputString);
@@ -657,9 +649,10 @@ bool validateInput(string inputString, string mainString)
 	return result;
 }
 
-/*
-.WORDBUILDING
-.Randomly choose a set of N letters (it may contain repeated letters) and ask the user to build a valid word, then verify if the word belongs to the word list or not. The letters 
+
+/**
+VALIDWORDS
+Randomly choose a set of N letters (it may contain repeated letters) and ask the user to build a valid word, then verify if the word belongs to the word list or not. The letters 
 are extracted from a sample set that contains the same proportions of letters from the larger set
 @param wordVector
 
@@ -684,7 +677,7 @@ void func4(vector<string>& wordVector)
 	}
 
 	cout << "=============================================" << endl;
-	cout << "====           WORD BUILDING             ====" << endl;
+	cout << "====            VALID WORDS              ====" << endl;
 	cout << "=============================================" << endl;
 	cout << endl << endl;
 
@@ -710,8 +703,6 @@ void func4(vector<string>& wordVector)
 
 
 }
-
-
 
 
 //==========================================FUNCAO_5====================================================================================
@@ -834,7 +825,7 @@ Read a string containing one or more wildcard characters ('*' or '?') and show a
 void func5(vector<string>& wordVector)
 {
 	cout << "=============================================" << endl;
-	cout << "====             VALID WORDS             ====" << endl;
+	cout << "====              WILDCARDS              ====" << endl;
 	cout << "=============================================" << endl;
 	cout << endl << endl;
 
