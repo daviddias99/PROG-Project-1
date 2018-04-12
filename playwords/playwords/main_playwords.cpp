@@ -627,26 +627,32 @@ void func4(vector<string>& wordVector)
 
 	cout << "How many letters do you want the word to contain? ";
 	cin >> letterQuant;
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	cout << "Input a words that contains the following letters: " << endl;
-	string outputString = outputNLetters(sampleVector, letterQuant);
-
-	cout << endl;
-	cin >> userAnswer;
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	if (validateInput(userAnswer, outputString))
+	if (!cin.eof())
 	{
-		if (searchWord(wordVector, allCaps(userAnswer)))
-		{
-			cout << "The word \"" << allCaps(userAnswer) << "\" exists in the file. " << endl;
-		}
-		else
-			cout << "The word \"" << allCaps(userAnswer) << "\" doesn't exist in the file. " << endl;
-	}
-	else
-		cout << "The given word must be built from a set or subset of the given letters. " << endl;
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+		cout << "Input a words that contains the following letters: " << endl;
+		string outputString = outputNLetters(sampleVector, letterQuant);
+
+		cout << endl;
+		cin >> userAnswer;
+		if (!cin.eof())
+		{
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			if (validateInput(userAnswer, outputString))
+			{
+				if (searchWord(wordVector, allCaps(userAnswer)))
+				{
+					cout << "The word \"" << allCaps(userAnswer) << "\" exists in the file. " << endl;
+				}
+				else
+					cout << "The word \"" << allCaps(userAnswer) << "\" doesn't exist in the file. " << endl;
+			}
+			else
+				cout << "The given word must be built from a set or subset of the given letters. " << endl;
+		}
+	}
 }
 
 
@@ -887,7 +893,13 @@ void menuHub(vector<string>& wordVector, bool startMode = false)
 		cout << "* ";
 		cin >> userInput;
 
-		if (cin.fail() || userInput > 5 || userInput < 0)
+		if (cin.eof())
+		{
+			userInput = 0;
+			break;
+		}
+
+		else if (cin.fail() || userInput > 5 || userInput < 0)
 		{
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -896,6 +908,7 @@ void menuHub(vector<string>& wordVector, bool startMode = false)
 		else
 			break;
 	}
+
 
 
 	switch (userInput)
