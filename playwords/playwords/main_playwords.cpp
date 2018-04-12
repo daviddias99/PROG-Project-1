@@ -450,8 +450,11 @@ void func3(vector<string> wordVector)
 
 //==========================================FUNCAO_4================================================================================
 
-
-
+/*
+.Calculates the minimum of a vector(of doubles)
+@param vector
+@result minimum
+*/
 
 double vectorMin(vector<double>& vector)
 {
@@ -468,6 +471,13 @@ double vectorMin(vector<double>& vector)
 	return min;
 
 }
+
+/*
+.Calculates the minimum sample size that allows the lowest appearing letter to have 2 instances in the sample.
+@param vectorFreq: vector of the relative frequencies of the letters in the dictionary
+@result: sample size
+
+*/
 
 int calculateSample(vector<double>& vectorFreq)
 {
