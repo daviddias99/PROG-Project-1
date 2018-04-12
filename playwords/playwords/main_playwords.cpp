@@ -9,6 +9,7 @@
 
 using namespace std;
 
+
 //Prototype of roundNum function
 double roundNum(double x, int n);
 
@@ -122,21 +123,17 @@ FIND WORD
 Asks the user for a word and checks if it belongs on the list
 @param wordvector: vector containing all words
 */
-void func1(vector<string> wordVector)
+void func1(vector<string>& wordVector)
 {
-	string playAgainAns;
-	bool playAgain;
-
-	do
-	{
-		system("cls"); //Clear screen
-		cout << "=============================================" << endl;
-		cout << "====              FIND WORD              ====" << endl;
-		cout << "=============================================" << endl;
-		cout << endl << endl;
+	cout << "=============================================" << endl;
+	cout << "====              FIND WORD              ====" << endl;
+	cout << "=============================================" << endl;
+	cout << endl << endl;
 
 
-		string inputWord;
+	string inputWord;
+
+	cout << "Enter a word: "; cin >> inputWord;
 
 		cout << "Enter a word: "; cin >> inputWord;
 
@@ -238,81 +235,47 @@ to guess the original word.
 */
 void func2(vector<string>&  wordVector)
 {
-	string playAgainAns;
-	bool playAgain;
+	const unsigned int NUM_TRIES = 3;
 
-	do
+	cout << "=============================================" << endl;
+	cout << "====              GUESS WORD             ====" << endl;
+	cout << "=============================================" << endl;
+	cout << endl << endl;
+
+
+	string secretWord = wordVector.at(randomBetween(0, (int)wordVector.size() - 1));
+	string scrambledWord = scrambleString(secretWord);
+	string userInput;
+
+	showScrambled(scrambledWord);
+	cout << endl << endl;
+
+	for (int i = 1; i <= NUM_TRIES; i++)
 	{
-		const unsigned int NUM_TRIES = 3;
+		cout << "Answer #" << i << ": ";
+		cin >> userInput;
 
-		system("cls");
-		cout << "=============================================" << endl;
-		cout << "====              GUESS WORD             ====" << endl;
-		cout << "=============================================" << endl;
-		cout << endl << endl;
-
-
-		string secretWord = wordVector.at(randomBetween(0, (int)wordVector.size() - 1));
-		string scrambledWord = scrambleString(secretWord);
-		string userInput;
-
-		showScrambled(scrambledWord);
-		cout << endl << endl;
-
-		for (int i = 1; i <= NUM_TRIES; i++)
+		if (allCaps(userInput) == secretWord)
 		{
-			cout << "Answer #" << i << ": ";
-			cin >> userInput;
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
-
-			if (allCaps(userInput) == secretWord)
-			{
-				cout << "Correct answer! " << endl;
-				break;
-			}
-
-			cout << "Wrong answer... (" << NUM_TRIES - i << " tries left)" << endl;
-
-			if (i == NUM_TRIES)
-			{
-				cout << endl;
-				cout << "The correct answer was \"" << secretWord << "\" " << endl;
-			}
-
-			cout << endl;
+			cout << "Correct answer! " << endl;
+			break;
 		}
 
 		cout << endl;
 		cout << "Do you want to play again? (Yes/No) ";
 		cin >> playAgainAns;
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+		cout << "Wrong answer... (" << NUM_TRIES - i << " tries left)" << endl;
 
-		while (cin.eof() || cin.fail() || (toupper(playAgainAns.at(0)) != 'Y' && toupper(playAgainAns.at(0)) != 'N'))
+		if (i == NUM_TRIES)
 		{
-			if (cin.eof())
-			{
-				cin.clear();
-				playAgain = false;
-				break;
-			}
-
-			if (cin.fail())
-			{
-				cin.clear();
-				cin.ignore(numeric_limits<streamsize>::max(), '\n');
-			}
-
-
-			cout << "Invalid answer. Answer must be Yes or No. Try again: ";
-			cin >> playAgainAns;
-			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			cout << endl;
+			cout << "The correct answer was \"" << secretWord << "\" " << endl;
 		}
-
-		if (playAgainAns != "")
-			playAgain = toupper(playAgainAns.at(0)) == 'Y' ? true : false;
-
-	} while (playAgain);
+		cout << endl;
+	}
 }
+
 
 
 //======================================FUNCAO_3========================================================================================
@@ -432,7 +395,7 @@ WORD BUILDING
 Ask the user a set of N letters and show all the words present in the dictionary that can be built using the set of the given letters or any subset of them
 @param wordVector: dictionary vector
 */
-void func3(vector<string> wordVector)
+void func3(vector<string>& wordVector)
 {
 	cout << "=============================================" << endl;
 	cout << "====           WORD BUILDING             ====" << endl;
@@ -487,7 +450,7 @@ Calculates the minimum sample size that allows the lowest appearing letter to ha
 */
 int calculateSample(vector<double>& vectorFreq)
 {
-	return (int)roundNum(2 / vectorMin(vectorFreq),0);
+	return (int)roundNum(2 / vectorMin(vectorFreq), 0);
 }
 
 
@@ -661,7 +624,7 @@ bool validateInput(string inputString, string mainString)
 
 /**
 VALIDWORDS
-Randomly choose a set of N letters (it may contain repeated letters) and ask the user to build a valid word, then verify if the word belongs to the word list or not. The letters 
+Randomly choose a set of N letters (it may contain repeated letters) and ask the user to build a valid word, then verify if the word belongs to the word list or not. The letters
 are extracted from a sample set that contains the same proportions of letters from the larger set
 @param wordVector
 
@@ -711,7 +674,6 @@ void func4(vector<string>& wordVector)
 	}
 	else
 		cout << "The word given must be built from a set or subset of the given letters " << endl;
-
 
 }
 
@@ -866,10 +828,57 @@ void func5(vector<string>& wordVector)
 
 	cout << endl << "All the valid words are: " << endl;
 	showVector(validWords);
+	cout << endl;
 }
 
 
 //======================================================================================================================================
+
+
+/**
+Repeats a game function for as long as the user says he wants to play it
+@param function: game function
+@param wordVecotr: dictionary vector
+*/
+void repeatFunc(void function(vector<string>&), vector<string>& wordVector)
+{
+	string playAgainAns;
+	bool playAgain;
+
+	do
+	{
+		system("cls");
+		function(wordVector);
+
+		cout << endl;
+		cout << "Do you want to play again? (Yes/No) ";
+		cin >> playAgainAns;
+
+		while (cin.eof() || cin.fail() || (toupper(playAgainAns.at(0)) != 'Y' && toupper(playAgainAns.at(0)) != 'N'))
+		{
+			if (cin.eof())
+			{
+				cin.clear();
+				playAgain = false;
+				break;
+			}
+
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+
+
+			cout << "Invalid answer. Answer must be Yes or No. Try again: ";
+			cin >> playAgainAns;
+		}
+
+		if (playAgainAns != "")
+			playAgain = toupper(playAgainAns.at(0)) == 'Y' ? true : false;
+
+	} while (playAgain);
+}
 
 
 /**
@@ -919,27 +928,23 @@ void menuHub(vector<string>& wordVector, bool startMode = false)
 		cout << endl << "GOOD BYE!" << endl;
 		break;
 	case 1:
-		cout << endl;
-		func1(wordVector);
+		repeatFunc(func1, wordVector);
 		menuHub(wordVector);
 		break;
 	case 2:
-		cout << endl;
-		func2(wordVector);
+		repeatFunc(func2, wordVector);
 		menuHub(wordVector);
 		break;
 	case 3:
-		cout << endl;
-		func3(wordVector);
+		repeatFunc(func3, wordVector);
 		menuHub(wordVector);
 		break;
 	case 4:
-		func4(wordVector);
+		repeatFunc(func4, wordVector);
 		menuHub(wordVector);
 		break;
 	case 5:
-		cout << endl;
-		func5(wordVector);
+		repeatFunc(func5, wordVector);
 		menuHub(wordVector);
 		break;
 	}
