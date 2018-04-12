@@ -14,19 +14,28 @@ using namespace std;
 /**
 Asks for the name of the file and trys to open the file
 @param file: passed by reference, corresponds to the opened input file
-@return value: true if the file is opened successfuly and false if the file doesn't exist or the file extension is invalid
+@return value: true if the file is opened successfuly and false if the user enters ctrl+z
 */
 bool getWordFile(ifstream& file)
 {
+	bool successfulyRead;
 	string fileName;
 
+	do 
+	{
 	//Gets the name of the input file
 	cout << "Word file ? ";
 	cin >> fileName;
 
 	//Checks if file extension is correct
-	while (fileName.size() > 3 && fileName.substr(fileName.size() - 4, 4) != ".txt")
+	while ((fileName.size() > 3 && fileName.substr(fileName.size() - 4, 4) != ".txt") || cin.eof())
 	{
+		if (cin.eof())
+		{
+			cin.clear();
+			return false;
+		}
+
 		cout << "Invalid file extension." << endl;
 		cout << "Word file ? ";
 		cin >> fileName;
@@ -39,10 +48,13 @@ bool getWordFile(ifstream& file)
 	if (!file.is_open())
 	{
 		cout << "File not found." << endl;
-		return false;
+		successfulyRead = false;
 	}
 	else
-		return true;
+		successfulyRead = true;
+	} while (!successfulyRead);
+
+	return successfulyRead;
 }
 
 
@@ -67,7 +79,7 @@ Receives a string and returns it with all caps
 */
 string allCaps(string word)
 {
-	for (int i = 0; i < word.size(); i++)
+	for (size_t i = 0; i < word.size(); i++)
 	{
 		word.at(i) = toupper(word.at(i));
 	}
@@ -105,20 +117,61 @@ bool searchWord(vector<string> wordVector, string word)
 
 
 /**
-WORD EXISTS
+FIND WORD
 Asks the user for a word and checks if it belongs on the list
 @param wordvector: vector containing all words
 */
 void func1(vector<string> wordVector)
 {
-	string inputWord;
+	string playAgainAns;
+	bool playAgain;
 
-	cout << "Enter a word: "; cin >> inputWord;
+	do
+	{
+		system("cls"); //Clear screen
+		cout << "=============================================" << endl;
+		cout << "====              FIND WORD              ====" << endl;
+		cout << "=============================================" << endl;
+		cout << endl << endl;
 
-	if (searchWord(wordVector, allCaps(inputWord)))
-		cout << "The word " << inputWord << " belongs on the list." << endl;
-	else
-		cout << "The word " << inputWord << " doesn't belong on the list." << endl;
+
+		string inputWord;
+
+		cout << "Enter a word: "; cin >> inputWord;
+
+		if (searchWord(wordVector, allCaps(inputWord)))
+			cout << "The word \"" << allCaps(inputWord) << "\" belongs on the list." << endl;
+		else
+			cout << "The word \"" << allCaps(inputWord) << "\" doesn't belong on the list." << endl;
+
+		cout << endl;
+		cout << "Do you want to play again? (Yes/No) ";
+		cin >> playAgainAns;
+
+		while (cin.eof() || cin.fail() || (toupper(playAgainAns.at(0)) != 'Y' && toupper(playAgainAns.at(0)) != 'N'))
+		{
+			if (cin.eof())
+			{
+				cin.clear();
+				playAgain = false;
+				break;
+			}
+
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+
+
+			cout << "Invalid answer. Answer must be Yes or No. Try again: ";
+			cin >> playAgainAns;
+		}
+
+		if (playAgainAns != "")
+			playAgain = toupper(playAgainAns.at(0)) == 'Y' ? true : false;
+
+	} while (playAgain);
 }
 
 
@@ -178,34 +231,77 @@ to guess the original word.
 */
 void func2(vector<string>&  wordVector)
 {
-	string secretWord = wordVector.at(randomBetween(0, (int)wordVector.size() - 1));
-	string scrambledWord = scrambleString(secretWord);
-	string userInput;
+	string playAgainAns;
+	bool playAgain;
 
-	cout << "== GUESS WORD ==" << endl << endl;
-	showScrambled(scrambledWord);
-	cout << secretWord;
-	cout << endl;
-
-	for (int i = 1; i <= 3; i++)
+	do
 	{
-		cout << "Answer #" << i << ": ";
-		cin >> userInput;
+		const unsigned int NUM_TRIES = 3;
 
-		if (allCaps(userInput) == secretWord)
+		system("cls");
+		cout << "=============================================" << endl;
+		cout << "====              GUESS WORD             ====" << endl;
+		cout << "=============================================" << endl;
+		cout << endl << endl;
+
+
+		string secretWord = wordVector.at(randomBetween(0, (int)wordVector.size() - 1));
+		string scrambledWord = scrambleString(secretWord);
+		string userInput;
+
+		showScrambled(scrambledWord);
+		cout << endl << endl;
+
+		for (int i = 1; i <= NUM_TRIES; i++)
 		{
-			cout << "Correct answer! " << endl;
-			break;
+			cout << "Answer #" << i << ": ";
+			cin >> userInput;
+
+			if (allCaps(userInput) == secretWord)
+			{
+				cout << "Correct answer! " << endl;
+				break;
+			}
+
+			cout << "Wrong answer... (" << NUM_TRIES - i << " tries left)" << endl;
+
+			if (i == NUM_TRIES)
+			{
+				cout << endl;
+				cout << "The correct answer was \"" << secretWord << "\" " << endl;
+			}
+
+			cout << endl;
 		}
 
-		cout << "Wrong answer... (" << 3 - i << " tries left)" << endl;
+		cout << endl;
+		cout << "Do you want to play again? (Yes/No) ";
+		cin >> playAgainAns;
 
-		if (i == 3)
+		while (cin.eof() || cin.fail() || (toupper(playAgainAns.at(0)) != 'Y' && toupper(playAgainAns.at(0)) != 'N'))
 		{
-			cout << "The correct answer was \" " << secretWord << " \" " << endl;
+			if (cin.eof())
+			{
+				cin.clear();
+				playAgain = false;
+				break;
+			}
+
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+
+
+			cout << "Invalid answer. Answer must be Yes or No. Try again: ";
+			cin >> playAgainAns;
 		}
 
-	}
+		if (playAgainAns != "")
+			playAgain = toupper(playAgainAns.at(0)) == 'Y' ? true : false;
+
+	} while (playAgain);
 }
 
 
@@ -328,6 +424,12 @@ Ask the user a set of N letters and show all the words present in the dictionary
 */
 void func3(vector<string> wordVector)
 {
+	cout << "=============================================" << endl;
+	cout << "====           WORD BUILDING             ====" << endl;
+	cout << "=============================================" << endl;
+	cout << endl << endl;
+
+
 	string letterString = normalizeWord(userLetters());
 
 	vector<string> validWords = getValidWords(wordVector, letterString);
@@ -366,7 +468,7 @@ Resizes a vector eliminating a "tail" of a vector that only contains null chars.
 */
 void normalizeVector(vector<char>& vectorInput)
 {
-	for (int i = 0; i < vectorInput.size(); i++)
+	for (size_t i = 0; i < vectorInput.size(); i++)
 	{
 		if (vectorInput.at(i) == '\0')
 		{
@@ -477,12 +579,11 @@ Chooses randomly,  a set of N chars from a given vector and outputs them to the 
 */
 void outputNLetters(vector<char>& sampleVector, int N)
 {
-	for (int i = 1; i <= N; i++)
+	for (size_t i = 1; i <= N; i++)
 	{
 		int randNum = randomBetween(0, sampleVector.size() - 1);
 		cout << sampleVector.at(randNum) << " ";
 	}
-
 }
 
 
@@ -612,7 +713,7 @@ string readWildCard(const unsigned int MAX_STR_SIZE)
 	{
 		if (cin.fail())
 		{
-			cin.clear(); 
+			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
 		cout << "Not a wildcard. Try again: ";
@@ -624,12 +725,18 @@ string readWildCard(const unsigned int MAX_STR_SIZE)
 
 
 /**
-WILDCARDS 
+WILDCARDS
 Read a string containing one or more wildcard characters ('*' or '?') and show all the words in the dictionary that match the given string
 @param wordVector: dictionary vector
 */
 void func5(vector<string> wordVector)
 {
+	cout << "=============================================" << endl;
+	cout << "====              WILDCARDS              ====" << endl;
+	cout << "=============================================" << endl;
+	cout << endl << endl;
+
+
 	const unsigned int MAX_STR_SIZE = 50;
 
 	vector<string> validWords;
@@ -668,13 +775,12 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 {
 	int userInput;
 
-	if (startMode)
-	{
-		cout << "=============================================" << endl;
-		cout << "====             PLAYWORDS               ====" << endl;
-		cout << "=============================================" << endl;
-	}
+	//Clear screen
+	system("cls");
 
+	cout << "=============================================" << endl;
+	cout << "====              PLAYWORDS              ====" << endl;
+	cout << "=============================================" << endl;
 	cout << endl << endl;
 	cout << "Please choose the game you want to play: " << endl << endl;
 	cout << "1 - Find Word " << endl;
@@ -682,7 +788,7 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 	cout << "3 - Word Building" << endl;
 	cout << "4 - Valid Words" << endl;
 	cout << "5 - Wildcards" << endl;
-	cout << "6 - Exit" << endl;
+	cout << "0 - Exit" << endl;
 
 	while (true)
 	{
@@ -690,7 +796,7 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 		cout << "* ";
 		cin >> userInput;
 
-		if (cin.fail() || userInput > 6 || userInput < 1 )
+		if (cin.fail() || userInput > 5 || userInput < 0)
 		{
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -703,6 +809,9 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 
 	switch (userInput)
 	{
+	case 0:
+		cout << endl << "GOOD BYE!" << endl;
+		break;
 	case 1:
 		cout << endl;
 		func1(wordVector);
@@ -725,9 +834,6 @@ void menuHub(vector<string> wordVector, bool startMode = false)
 		func5(wordVector);
 		menuHub(wordVector);
 		break;
-	default:
-		cout << "GOOD BYE!" << endl;
-		break;
 	}
 }
 
@@ -747,10 +853,10 @@ int main()
 	vector<int> charFreq(26);
 
 	//Seed for random number generation
-	srand(time(NULL));
+	srand((unsigned int)time(NULL));
 
 	//Open word file
-	while (!getWordFile(wordFile));
+	getWordFile((wordFile);
 
 
 	//Save words into vector and close word file
@@ -759,7 +865,7 @@ int main()
 	wordFile.close();
 	cout << endl;
 
-	//Starts game with menu 
+	//Starts game with menu for the player to choose the game he wants to play
 	menuHub(wordVector, true);
 
 	return 0;
