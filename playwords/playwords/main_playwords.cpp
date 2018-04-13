@@ -63,20 +63,6 @@ bool getWordFile(ifstream& file)
 
 
 /**
-Reads word file saving all words into a vector of strings
-@param file: file to read
-@param words: vector where words are stored
-*/
-void readFile(ifstream& file, vector<string>& wordVector)
-{
-	string word;
-
-	while (file >> word)
-		wordVector.push_back(word);
-}
-
-
-/**
 Receives a string and returns it with all caps
 @param word: word we want to make all caps
 @return value: same word, all caps
@@ -90,6 +76,21 @@ string allCaps(string word)
 
 	return word;
 }
+
+
+/**
+Reads word file saving all words into a vector of strings
+@param file: file to read
+@param words: vector where words are stored
+*/
+void readFile(ifstream& file, vector<string>& wordVector)
+{
+	string word;
+
+	while (file >> word)
+		wordVector.push_back(word);
+}
+
 
 
 /**
@@ -974,6 +975,12 @@ int main()
 	readFile(wordFile, wordVector);
 	wordFile.close();
 	cout << endl;
+
+	if (wordVector.size() == 0)
+	{
+		cerr << "The file is empty. Exiting... " << endl;
+		return 2;
+	}
 
 	//Starts game with menu for the player to choose the game he wants to play
 	menuHub(wordVector, true);

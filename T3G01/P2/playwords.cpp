@@ -63,20 +63,6 @@ bool getWordFile(ifstream& file)
 
 
 /**
-Reads word file saving all words into a vector of strings
-@param file: file to read
-@param words: vector where words are stored
-*/
-void readFile(ifstream& file, vector<string>& wordVector)
-{
-	string word;
-
-	while (file >> word)
-		wordVector.push_back(word);
-}
-
-
-/**
 Receives a string and returns it with all caps
 @param word: word we want to make all caps
 @return value: same word, all caps
@@ -90,6 +76,21 @@ string allCaps(string word)
 
 	return word;
 }
+
+
+/**
+Reads word file saving all words into a vector of strings
+@param file: file to read
+@param words: vector where words are stored
+*/
+void readFile(ifstream& file, vector<string>& wordVector)
+{
+	string word;
+
+	while (file >> word)
+		wordVector.push_back(word);
+}
+
 
 
 /**
@@ -754,23 +755,25 @@ Reads a stl string corresponding to a wildcard from the user
 */
 string readWildCard(const unsigned int MAX_STR_SIZE)
 {
-	string wildCard;
+	string wildCard= "";
 
 	cout << "Enter a wildcard: "; cin >> wildCard;
-	cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
-	while (cin.fail() || !isWildCard(wildCard) || wildCard.size() > MAX_STR_SIZE)
-	{
-		if (cin.fail())
+
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+
+		while (cin.fail() || !isWildCard(wildCard) || wildCard.size() > MAX_STR_SIZE)
 		{
-			cin.clear();
+			if (cin.fail())
+			{
+				cin.clear();
+				cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			}
+			cout << "Not a wildcard. Try again: ";
+			cin >> wildCard;
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 		}
-		cout << "Not a wildcard. Try again: ";
-		cin >> wildCard;
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	}
-
 	return wildCard;
 }
 
@@ -797,25 +800,26 @@ void func5(vector<string>& wordVector)
 	char cWildPointer[MAX_STR_SIZE + 1];
 	char cWordPointer[MAX_STR_SIZE + 1];
 
-	strcpy_s(cWildPointer, wildCard.c_str());
+		strcpy_s(cWildPointer, wildCard.c_str());
 
-	for (size_t i = 0; i < wordVector.size(); i++)
-	{
-		strcpy_s(cWordPointer, wordVector.at(i).c_str());
-
-		if (wildcardMatch(cWordPointer, cWildPointer))
+		for (size_t i = 0; i < wordVector.size(); i++)
 		{
-			validWords.push_back(wordVector.at(i));
-		}
-	}
+			strcpy_s(cWordPointer, wordVector.at(i).c_str());
 
-	if (validWords.size() > 0)
-	{
-		cout << endl << "All the valid words are: " << endl;
-		showVector(validWords);
-	}
-	else
-		cout << "There are no valid words. " << endl;
+			if (wildcardMatch(cWordPointer, cWildPointer))
+			{
+				validWords.push_back(wordVector.at(i));
+			}
+		}
+
+		if (validWords.size() > 0)
+		{
+			cout << endl << "All the valid words are: " << endl;
+			showVector(validWords);
+		}
+		else
+			cout << "There are no valid words. " << endl;
+
 }
 
 
@@ -971,6 +975,12 @@ int main()
 	readFile(wordFile, wordVector);
 	wordFile.close();
 	cout << endl;
+
+	if (wordVector.size() == 0)
+	{
+		cerr << "The file is empty. Exiting... " << endl;
+		return 2;
+	}
 
 	//Starts game with menu for the player to choose the game he wants to play
 	menuHub(wordVector, true);
