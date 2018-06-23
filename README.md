@@ -1,4 +1,4 @@
-# --- MIEIC-PROG: Project 1 2017/2017 ---
+# --- MIEIC-PROG: Project 1 2017/2018 ---
 
 AUTHORS
 
