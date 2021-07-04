@@ -12,8 +12,9 @@
 **Grade**: *Ungraded*
 
 ---
+## Project description
 
-## Introduction
+### Introduction
 
 These programs were assigned to us as the first project for the class "Programming" in order to apply the knowledge we gained through the semester about the concepts of structured programming, top-down and bottom-up development and the programming language C++(library functions, syntax, data-structures,...).
 The project is divided in two segments.
