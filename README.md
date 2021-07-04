@@ -7,7 +7,7 @@
 **Authors:** David Silva ([daviddias99](https://github.com/daviddias99)), Luís Cunha ([luispcunha](https://github.com/luispcunha))
 
 ---
-**Description:** *See bellow* and in the `docs` folder.
+**Description:** *See bellow*. The detailed specification can be found in the `docs` folder.
 
 **Grade**: *Ungraded*
 
