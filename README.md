@@ -9,6 +9,8 @@
 ---
 **Description:** *See bellow* and in the `docs` folder.
 
+**Technologies:** C/C++
+
 **Grade**: *Ungraded*
 
 ---
